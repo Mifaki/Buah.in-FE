@@ -1,0 +1,50 @@
+@font-face {
+  font-family: "jakarta-r";
+  font-weight: 400;
+  src: url("../../fonts/PlusJakartaSans-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "jakarta-md";
+  font-weight: 500;
+  src: url("../../fonts/PlusJakartaSans-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "jakarta-sb";
+  font-weight: 600;
+  src: url("../../fonts/PlusJakartaSans-SemiBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "jakarta-b";
+  font-weight:700;
+  src: url("../../fonts/PlusJakartaSans-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "jakarta-xb";
+  font-weight: 800;
+  src: url("../../fonts/PlusJakartaSans-ExtraBold.woff") format("woff");
+}
+
+  // declare a class which applies it
+  .jakarta-r {
+    font-family: 'jakarta-r';
+  }
+
+  .jakarta-md {
+    font-family: 'jakarta-md';
+  }
+
+  .jakarta-sb {
+    font-family: 'jakarta-sb';
+  }
+
+  .jakarta-b {
+    font-family: 'jakarta-b';
+  }
+
+  .jakarta-xb {
+    font-family: 'jakarta-xb';
+  }

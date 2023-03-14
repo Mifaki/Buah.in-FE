@@ -1,89 +1,33 @@
 <template>
   <q-page>
-    <div class="row items-start">
-      <q-list bordered class="sidebar">
-        <q-item>
-          <q-item-section class="jakarta-b paragraph q-mb-none">Kategori</q-item-section>
-        </q-item>
-
-        <q-item clickable v-ripple class="q-pb-none">
-          <q-item-section class="jakarta-sb caption q-mb-none q-ml-md">Best Deal</q-item-section>
-        </q-item>
-
-        <q-item clickable v-ripple class="q-py-none">
-          <q-item-section class="jakarta-sb caption q-mb-none q-ml-md ">Buah.in Selection</q-item-section>
-        </q-item>
-
-        <q-item clickable v-ripple class="q-py-none">
-          <q-item-section class="jakarta-sb caption q-mb-none q-ml-md">On Sale</q-item-section>
-        </q-item>
-
-        <q-item clickable v-ripple class="q-py-none">
-          <q-item-section class="jakarta-sb caption q-mb-none q-ml-md">Semua Kategori</q-item-section>
-        </q-item>
-
-        <q-separator />
-
-        <q-item>
-          <q-item-section class="jakarta-b paragraph q-mb-none">Lokasi</q-item-section>
-        </q-item>
-
-        <q-item class="q-py-none">
-          <q-checkbox class="jakarta-sb caption q-mb-none" v-model="Malang" color="green" label="Malang">
-          </q-checkbox>
-        </q-item>
-
-        <q-item class="q-py-none">
-          <q-checkbox class="jakarta-sb caption q-mb-none" v-model="Batu" color="green" label="Batu">
-          </q-checkbox>
-        </q-item>
-
-        <q-item class="q-py-none">
-          <q-checkbox class="jakarta-sb caption q-mb-none" v-model="Banyuwangi" color="green" label="Banyuwangi">
-          </q-checkbox>
-        </q-item>
-
-        <q-item class="q-py-none">
-          <q-checkbox class="jakarta-sb caption q-mb-none" v-model="Probolinggo" color="green" label="Probolinggo">
-          </q-checkbox>
-        </q-item>
-
-        <q-separator />
-
-        <q-item>
-          <q-item-section class="jakarta-b paragraph q-mb-none">Urutkan</q-item-section>
-        </q-item>
-
-        <q-item>
-          <q-item-section>
-            <q-btn outline rounded color="hitam20" icon-right="fa-solid fa-arrow-up" label="Murah ke Mahal" no-caps dense/>
-          </q-item-section>
-        </q-item>
-
-        <q-item>
-          <q-item-section>
-            <q-btn outline rounded color="hitam20" icon-right="fa-solid fa-arrow-down" label="Mahal ke Murah" no-caps dense />
-          </q-item-section>
-        </q-item>
-
-        <q-separator />
-        '
-      </q-list>
+    <div class="container">
+      <div class="top row justify-between">
+        <div>
+          <P class="owner-text jakarta-sb q-mb-none q-mb-sm">{{ this.owner }}</P>
+          <p class="city-text jakarta-sb q-mb-none">{{ this.city }}</p>
+        </div>
+        <div>
+          <div class="row items-center q-px-md q-mb-sm">
+            <q-icon name="fa-solid fa-star" size="26px" color="yellow" />
+            <p class="rating-text jakarta-b q-mb-none q-ml-sm">{{ this.rating.toFixed(1) }}</p>
+          </div>
+          <p class="rating-caption jakarta-sb q-mb-none">Rating & Ulasan</p>
+        </div>
+      </div>
       <div class="right-container q-mt-xl">
         <div class="row q-ml-md">
           <div class="row cursor-pointer active-page jakarta-b q-mb-none q-px-md">
             <q-icon name="fa-solid fa-seedling" />
             <p class="q-ml-sm q-mb-none">Buah</p>
           </div>
-          <router-link to="kategori-stores" class="link">
+          <router-link to="ratings" class="link">
             <div class="row cursor-pointer toggle-text jakarta-b q-mb-none q-ml-lg q-px-md">
-              <q-icon name="fa-solid fa-store" />
-              <p class="q-ml-sm q-mb-none">Penjual</p>
+              <q-icon name="fa-regular fa-star" />
+              <p class="q-ml-sm q-mb-none">Ulasan</p>
             </div>
           </router-link>
         </div>
-        <q-table :rows="rows" :columns="columns" :cols="5" row-key="name" class="fruits col-10  " grid
-          hide-header virtual-scroll>
+        <q-table :rows="rows" :columns="columns" row-key="name" grid hide-header virtual-scroll>
           <template v-slot:item="props">
             <div class="q-pa-md">
               <q-card no-shadow class="card">
@@ -106,7 +50,7 @@
                   <p class="caption jakarta-md  q-mb-none q-mt-sm">{{ props.row.city }}</p>
                   <div v-if="props.row.sold" class="row items-center q-mt-sm">
                     <q-icon name="star" color="yellow" />
-                    <p class="caption jakarta-md q-mb-none q-ml-sm">{{ props.row.rating.toFixed(1) }}</p>
+                    <p class="caption jakarta-md q-mb-none q-ml-sm">{{ props.row.rating }}</p>
                     <p class="caption jakarta-md q-mb-none q-ml-sm">|</p>
                     <p class="caption jakarta-md q-mb-none q-ml-sm">Terjual</p>
                     <p class="caption jakarta-md q-mb-none q-ml-sm">{{ props.row.sold }}</p>
@@ -122,8 +66,6 @@
 </template>
 
 <script>
-import { ref } from 'vue'
-
 const columns = [
   {
     name: 'id',
@@ -274,17 +216,22 @@ const rows = [
     stock: 20,
   }
 ]
+
 export default {
-  name: 'KategoriFruits',
+  name: 'StoreIDFruits',
+
+  data() {
+    return {
+      owner: 'Pak Faiz',
+      city: 'Kabupaten Banyumas',
+      rating: 4.9,
+    }
+  },
 
   setup() {
     return {
       columns,
-      rows,
-      Malang: ref(false),
-      Batu: ref(false),
-      Banyuwangi: ref(false),
-      Probolinggo: ref(false),
+      rows
     }
   },
 
@@ -310,32 +257,35 @@ export default {
 </script>
 
 <style>
-.right-container {
-  width: 1280px;
+.container {
+  margin: 0 154px;
+  margin-top: 56px;
+  margin-bottom: 52px;
 }
 
-.sidebar {
-  margin-top: 48px;
-  margin-left: 36px;
-  width: 201px;
-  height: 695px;
-  background-color: white;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+.top {
+  width: 100%;
+  height: 116px;
+  padding: 32px 24px;
+  border: 1px solid #116530;
   border-radius: 15px;
 }
 
-.paragraph {
+.owner-text,
+.rating-text {
   font-size: 16px;
   color: #323741;
 }
 
-.caption {
-  font-size: 14px;
+.city-text,
+.rating-caption {
   color: #70737A;
 }
 
-.link{
-  text-decoration: none;
+.active-page {
+  font-size: 16px;
+  border-bottom: 2px solid #116530;
+  color: #116530;
 }
 
 .toggle-text {
@@ -343,12 +293,8 @@ export default {
   color: #ADAFB3;
 }
 
-.list {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 141px;
+.link {
+  text-decoration: none;
 }
 
 .card {
@@ -371,17 +317,13 @@ export default {
   color: #E4504A;
 }
 
-.active-page {
+.paragraph {
   font-size: 16px;
-  border-bottom: 2px solid #116530;
-  color: #116530;
+  color: #323741;
 }
 
-.text-hitam20 {
-  color: #70737A !important;
-}
-
-.bg-hitam20 {
-  background: #70737A !important;
+.caption {
+  font-size: 14px;
+  color: #70737A;
 }
 </style>

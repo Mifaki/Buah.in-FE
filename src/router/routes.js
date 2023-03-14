@@ -31,7 +31,9 @@ const routes = [
       { path: 'kategori-fruits', name:'KategoriFruits', component: () => import('src/pages/KategoriFruits.vue') },
       { path: 'kategori-stores', name:'KategoriStores', component: () => import('src/pages/KategoriStores.vue') },
       { path: 'cart', name:'Cart', component: () => import('pages/Cart.vue') },
-      { path: 'checkout', name:'Checkout', component: () => import('pages/Checkout.vue') }
+      { path: 'checkout', name:'Checkout', component: () => import('pages/Checkout.vue') },
+      { path: 'store-id/fruits', name:'StoreIDFruits', component: () => import('pages/StoreIDFruits.vue') },
+      { path: 'store-id/ratings', name:'StoreIDRatings', component: () => import('pages/StoreIDRatings.vue') }
     ]
   },
 

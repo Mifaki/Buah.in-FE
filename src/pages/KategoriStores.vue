@@ -53,6 +53,20 @@
         <q-item>
           <q-item-section class="jakarta-b paragraph q-mb-none">Urutkan</q-item-section>
         </q-item>
+
+        <q-item>
+          <q-item-section>
+            <q-btn outline rounded color="hitam20" icon-right="fa-solid fa-arrow-up" label="Murah ke Mahal" no-caps dense/>
+          </q-item-section>
+        </q-item>
+
+        <q-item>
+          <q-item-section>
+            <q-btn outline rounded color="hitam20" icon-right="fa-solid fa-arrow-down" label="Mahal ke Murah" no-caps dense />
+          </q-item-section>
+        </q-item>
+
+        <q-separator />
       </q-list>
       <div class="right-container q-mt-xl">
         <div class="row q-ml-md">
@@ -305,5 +319,13 @@ export default {
   font-size: 16px;
   border-bottom: 2px solid #116530;
   color: #116530;
+}
+
+.text-hitam20 {
+  color: #70737A !important;
+}
+
+.bg-hitam20 {
+  background: #70737A !important;
 }
 </style>

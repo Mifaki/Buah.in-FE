@@ -1,18 +1,18 @@
 <template>
-  <div class="fullscreen bg-blue text-white text-center q-pa-md flex flex-center">
+  <div class="fullscreen bg-green text-white text-center q-pa-md flex flex-center">
     <div>
-      <div style="font-size: 30vh">
+      <div style="font-size: 30vh" class="jakarta-b">
         404
       </div>
 
-      <div class="text-h2" style="opacity:.4">
-        Oops. Nothing here...
+      <div class="jakarta-b text-h4" style="opacity:.4">
+        I'm sorry but the page you were trying to looking for doesn't exist
       </div>
 
       <q-btn
-        class="q-mt-xl"
+        class="jakarta-b q-mt-xl"
         color="white"
-        text-color="blue"
+        text-color="primary"
         unelevated
         to="/"
         label="Go Home"

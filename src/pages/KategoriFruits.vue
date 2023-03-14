@@ -54,41 +54,54 @@
           <q-item-section class="jakarta-b paragraph q-mb-none">Urutkan</q-item-section>
         </q-item>
       </q-list>
-      <q-table :rows="rows" :columns="columns" :cols="5" row-key="name" class="fruits q-ml-xl col-10  " grid hide-header
-        virtual-scroll v-model:pagination="pagination" :rows-per-page-options="[0]" hide-bottom>
-        <template v-slot:item="props">
-          <div class="q-pa-md">
-            <q-card no-shadow class="card">
-              <q-icon :name="props.row.thumbnail" size="202px" />
-              <div class="card-inside q-mx-md q-mt-sm">
-                <p class="paragraph jakarta-sb q-mb-none q-mt-sm">{{ props.row.name }}</p>
-                <div v-if="props.row.discount > 0 || props.row < 100">
-                  <p class="paragraph jakarta-b q-mb-none q-mt-sm">Rp {{ calculateDiscount(props.row.price,
-                    props.row.discount) }}</p>
-                  <div class="row q-mt-sm items-center">
-                    <div class="discount-bg">
-                      <p class="discount-text jakarta-b q-mb-none q-pa-xs">{{ props.row.discount }}%</p>
+      <div class="right-container q-mt-xl">
+        <div class="row q-ml-md">
+          <div class="row cursor-pointer active-page jakarta-b q-mb-none q-px-md">
+            <q-icon name="fa-solid fa-seedling" />
+            <p class="q-ml-sm q-mb-none">Buah</p>
+          </div>
+          <router-link to="kategori-stores" class="link">
+            <div class="row cursor-pointer toggle-text jakarta-b q-mb-none q-ml-lg q-px-md">
+              <q-icon name="fa-solid fa-store" />
+              <p class="q-ml-sm q-mb-none">Penjual</p>
+            </div>
+          </router-link>
+        </div>
+        <q-table :rows="rows" :columns="columns" :cols="5" row-key="name" class="fruits col-10  " grid
+          hide-header virtual-scroll>
+          <template v-slot:item="props">
+            <div class="q-pa-md">
+              <q-card no-shadow class="card">
+                <q-icon :name="props.row.thumbnail" size="202px" />
+                <div class="card-inside q-mx-md q-mt-sm">
+                  <p class="paragraph jakarta-sb q-mb-none q-mt-sm">{{ props.row.name }}</p>
+                  <div v-if="props.row.discount > 0 || props.row < 100">
+                    <p class="paragraph jakarta-b q-mb-none q-mt-sm">Rp {{ calculateDiscount(props.row.price,
+                      props.row.discount) }}</p>
+                    <div class="row q-mt-sm items-center">
+                      <div class="discount-bg">
+                        <p class="discount-text jakarta-b q-mb-none q-pa-xs">{{ props.row.discount }}%</p>
+                      </div>
+                      <p class="caption jakarta-md q-mb-none q-ml-md">Rp <strike>{{ formatNumber(props.row.price)
+                      }}</strike>
+                      </p>
                     </div>
-                    <p class="caption jakarta-md q-mb-none q-ml-md">Rp <strike>{{ formatNumber(props.row.price)
-                    }}</strike>
-                    </p>
+                  </div>
+                  <p v-else class="paragraph jakarta-b q-mb-none q-mt-sm">Rp {{ formatNumber(props.row.price) }}</p>
+                  <p class="caption jakarta-md  q-mb-none q-mt-sm">{{ props.row.city }}</p>
+                  <div v-if="props.row.sold" class="row items-center q-mt-sm">
+                    <q-icon name="star" color="yellow" />
+                    <p class="caption jakarta-md q-mb-none q-ml-sm">{{ props.row.rating.toFixed(1) }}</p>
+                    <p class="caption jakarta-md q-mb-none q-ml-sm">|</p>
+                    <p class="caption jakarta-md q-mb-none q-ml-sm">Terjual</p>
+                    <p class="caption jakarta-md q-mb-none q-ml-sm">{{ props.row.sold }}</p>
                   </div>
                 </div>
-                <p v-else class="paragraph jakarta-b q-mb-none q-mt-sm">Rp {{ formatNumber(props.row.price) }}</p>
-                <p class="caption jakarta-md  q-mb-none q-mt-sm">{{ props.row.city }}</p>
-                <div v-if="props.row.sold" class="row items-center q-mt-sm">
-                  <q-icon name="star" color="yellow" />
-                  <p class="caption jakarta-md q-mb-none q-ml-sm">{{ props.row.rating.toFixed(1) }}</p>
-                  <p class="caption jakarta-md q-mb-none q-ml-sm">|</p>
-                  <p class="caption jakarta-md q-mb-none q-ml-sm">Terjual</p>
-                  <p class="caption jakarta-md q-mb-none q-ml-sm">{{ props.row.sold }}</p>
-                </div>
-              </div>
-            </q-card>
-          </div>
-        </template>
-      </q-table>
-
+              </q-card>
+            </div>
+          </template>
+        </q-table>
+      </div>
     </div>
   </q-page>
 </template>
@@ -112,7 +125,7 @@ const columns = [
   { name: 'rating', required: true, field: 'rating', sortable: false },
   { name: 'sold', required: true, field: 'sold', sortable: true },
   { name: 'kondisi', required: true, field: 'kondisi', sortable: true },
-  { name: 'berat',required: true, field: 'berat', sortable: false },
+  { name: 'berat', required: true, field: 'berat', sortable: false },
   { name: 'desc', required: true, field: 'desc', sortable: false },
   { name: 'stock', required: true, field: 'stock', sortable: false }
 ]
@@ -129,7 +142,7 @@ const rows = [
     sold: 500,
     kondisi: 'Baru panen',
     Berat: 3,
-    desc:'Lorem ipsum dolor sit amet, consectetur',
+    desc: 'Lorem ipsum dolor sit amet, consectetur',
     stock: 20,
   },
   {
@@ -142,7 +155,7 @@ const rows = [
     sold: 81,
     kondisi: 'Baru panen',
     Berat: 3,
-    desc:'Lorem ipsum dolor sit amet, consectetur',
+    desc: 'Lorem ipsum dolor sit amet, consectetur',
     stock: 20,
   },
   {
@@ -153,7 +166,7 @@ const rows = [
     city: 'Kota Batu',
     kondisi: 'Baru panen',
     Berat: 3,
-    desc:'Lorem ipsum dolor sit amet, consectetur',
+    desc: 'Lorem ipsum dolor sit amet, consectetur',
     stock: 20,
   },
   {
@@ -164,7 +177,7 @@ const rows = [
     city: 'Kabupaten Banyumas',
     kondisi: 'Baru panen',
     Berat: 3,
-    desc:'Lorem ipsum dolor sit amet, consectetur',
+    desc: 'Lorem ipsum dolor sit amet, consectetur',
     stock: 20,
   },
   {
@@ -177,7 +190,7 @@ const rows = [
     sold: 52,
     kondisi: 'Baru panen',
     Berat: 3,
-    desc:'Lorem ipsum dolor sit amet, consectetur',
+    desc: 'Lorem ipsum dolor sit amet, consectetur',
     stock: 20,
   },
   {
@@ -191,7 +204,7 @@ const rows = [
     sold: 21,
     kondisi: 'Baru panen',
     Berat: 3,
-    desc:'Lorem ipsum dolor sit amet, consectetur',
+    desc: 'Lorem ipsum dolor sit amet, consectetur',
     stock: 20,
   },
   {
@@ -202,7 +215,7 @@ const rows = [
     city: 'Kabupaten karanganyar',
     kondisi: 'Baru panen',
     Berat: 3,
-    desc:'Lorem ipsum dolor sit amet, consectetur',
+    desc: 'Lorem ipsum dolor sit amet, consectetur',
     stock: 20,
   },
   {
@@ -215,7 +228,7 @@ const rows = [
     sold: 192,
     kondisi: 'Baru panen',
     Berat: 3,
-    desc:'Lorem ipsum dolor sit amet, consectetur',
+    desc: 'Lorem ipsum dolor sit amet, consectetur',
     stock: 20,
   },
   {
@@ -229,7 +242,7 @@ const rows = [
     sold: 1382,
     kondisi: 'Baru panen',
     Berat: 3,
-    desc:'Lorem ipsum dolor sit amet, consectetur',
+    desc: 'Lorem ipsum dolor sit amet, consectetur',
     stock: 20,
   },
   {
@@ -242,13 +255,12 @@ const rows = [
     sold: 313,
     kondisi: 'Baru panen',
     Berat: 3,
-    desc:'Lorem ipsum dolor sit amet, consectetur',
+    desc: 'Lorem ipsum dolor sit amet, consectetur',
     stock: 20,
   }
 ]
-
 export default {
-  name: 'Kategori',
+  name: 'KategoriFruits',
 
   setup() {
     return {
@@ -267,6 +279,9 @@ export default {
     },
 
     formatNumber(value) {
+      if (value === undefined) {
+        return '';
+      }
       return value.toLocaleString('en-US');
     },
 
@@ -280,9 +295,8 @@ export default {
 </script>
 
 <style>
-.fruits {
-  margin-top: 40px;
-  margin-left: 16px;
+.right-container {
+  width: 1280px;
 }
 
 .sidebar {
@@ -303,6 +317,15 @@ export default {
 .caption {
   font-size: 14px;
   color: #70737A;
+}
+
+.link{
+  text-decoration: none;
+}
+
+.toggle-text {
+  font-size: 16px;
+  color: #ADAFB3;
 }
 
 .list {
@@ -332,5 +355,11 @@ export default {
 .discount-text {
   font-size: 12px;
   color: #E4504A;
+}
+
+.active-page {
+  font-size: 16px;
+  border-bottom: 2px solid #116530;
+  color: #116530;
 }
 </style>

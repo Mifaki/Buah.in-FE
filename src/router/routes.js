@@ -28,7 +28,8 @@ const routes = [
     children: [
       { path: '', name:'Home', component: () => import('pages/Home.vue') },
       { path: 'fruit-id', name:'FruitID', component: () => import('pages/FruitID.vue') },
-      { path: 'kategori', name:'Kategori', component: () => import('pages/Kategori.vue') },
+      { path: 'kategori-fruits', name:'KategoriFruits', component: () => import('src/pages/KategoriFruits.vue') },
+      { path: 'kategori-stores', name:'KategoriStores', component: () => import('src/pages/KategoriStores.vue') },
       { path: 'cart', name:'Cart', component: () => import('pages/Cart.vue') },
       { path: 'checkout', name:'Checkout', component: () => import('pages/Checkout.vue') }
     ]

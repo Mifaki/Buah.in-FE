@@ -13,9 +13,9 @@
         @mouseenter="showDropdown = true" dense>
         <div @mouseleave="showDropdown = false">
           <div class="row justify-evenly items-end">
-            <q-item-label class="cursor-pointer" :class="{ 'active-page': currentPage }"
+            <q-item-label class="jakarta-b cursor-pointer" :class="{ 'active-page': currentPage }"
               @click="currentPage = true">Transaksi</q-item-label>
-            <q-item-label class="cursor-pointer" :class="{ 'active-page': !currentPage }"
+            <q-item-label class="jakarta-b cursor-pointer" :class="{ 'active-page': !currentPage }"
               @click="currentPage = false">Informasi</q-item-label>
           </div>
           <q-item v-if="currentPage">

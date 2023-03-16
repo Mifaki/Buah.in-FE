@@ -11,10 +11,10 @@
             <q-btn flat label="Masuk" no-caps class="green q-pa-none" size="28px" />
           </div>
           <q-form @submit.prevent="submit">
-            <!-- <p class="jakarta-sb q-mb-none q-px-sm q-mt-xl" style="font-size: 16px; color: #116530">
+            <p class="jakarta-sb q-mb-none q-px-sm q-mt-xl" style="font-size: 16px; color: #116530">
               Username
             </p>
-            <q-input outlined round v-model="name" class="q-mt-sm" :rules="[(val) => !!val]" /> -->
+            <q-input outlined round v-model="username" class="q-mt-sm" :rules="[(val) => !!val]" />
             <p class="label jakarta-sb q-mb-none q-px-sm">
               Email
             </p>
@@ -32,10 +32,10 @@
                 <q-icon :name="isPwd ? 'visibility_off' : 'visibility'" class="cursor-pointer" @click="isPwd = !isPwd" />
               </template>
             </q-input>
-            <!-- <p class="jakarta-sb q-mb-none q-px-sm q-mt-md" style="font-size: 16px; color: #116530">
+            <p class="jakarta-sb q-mb-none q-px-sm q-mt-md" style="font-size: 16px; color: #116530">
               Nomor Telepon
-            </p> -->
-            <!-- <q-input outlined round v-model="noTelp" class="q-mt-sm" :rules="[(val) => !!val]" /> -->
+            </p>
+            <q-input outlined round v-model="notelp" class="q-mt-sm" :rules="[(val) => !!val]" />
             <q-btn class="button jakarta-b q-mt-xl q-mb-md" type="submit" unelevated label="Daftar" text-color="white"
               no-caps />
           </q-form>
@@ -61,24 +61,24 @@ export default {
 
   data() {
     return {
-      // name: ref(null),
+      username: ref(null),
       password: ref(null),
       isPwd: ref(true),
       email: ref(null),
-      // noTelp: ref(null),
+      notelp: ref(null),
     };
   },
 
   methods: {
     async submit() {
       const userData = {
-        // name: this.name,
-        email: this.email,
-        password: this.password,
-        // noTelp: this.noTelp,
+        Username: this.username,
+        Email: this.email,
+        Password: this.password,
+        NoTelp: this.noTelp,
       }
       // console.log(userData);
-      await api.post('https://reqres.in/api/register', userData).then((response) => {
+      await api.post('/api/user/register', userData).then((response) => {
         console.log(response)
       }).catch((error) => {
         console.log(error);

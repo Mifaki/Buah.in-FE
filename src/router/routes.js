@@ -36,7 +36,16 @@ const routes = [
       { path: 'store-id/ratings', name:'StoreIDRatings', component: () => import('pages/StoreIDRatings.vue') },
       { path: 'payment', name:'Payment', component: () => import('pages/Payment.vue') },
       { path: 'confirmation-waiting', name:'ConfirmationWaiting', component: () => import('pages/ConfirmationWaiting.vue') },
-      { path: 'confirmation-review', name:'ConfirmationReview', component: () => import('pages/ConfirmationReview.vue') }
+      { path: 'confirmation-review', name:'ConfirmationReview', component: () => import('pages/ConfirmationReview.vue') },
+      { path: 'payment-confirmation', name:'PaymentConfirmation', component: () => import('pages/PaymentConfirmation.vue') }
+    ]
+  },
+
+  {
+    path: '/payment-confirmation',
+    component: () => import('layouts/BlankLayout.vue'),
+    children: [
+      { path: '', name:'PaymentConfirmation', component: () => import('pages/PaymentConfirmation.vue') }
     ]
   },
 

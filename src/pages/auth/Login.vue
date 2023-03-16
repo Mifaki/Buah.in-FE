@@ -13,7 +13,7 @@
           <p class="label jakarta-sb q-mb-none q-px-sm q-mt-xl">
             Username
           </p>
-          <q-input outlined round v-model="email" class="q-mt-sm" :rules="[(val) => !!val]" />
+          <q-input outlined round v-model="username" class="q-mt-sm" :rules="[(val) => !!val]" />
           <p class="label jakarta-sb q-mb-none q-px-sm q-mt-md">
             Email
           </p>
@@ -52,7 +52,7 @@ export default {
   data() {
     return {
       // username: ref(null),
-      email: ref(null),
+      username: ref(null),
       password: ref(null),
       isPwd: ref(true),
       orange: ref(false),
@@ -62,10 +62,10 @@ export default {
   methods: {
     async submit() {
       const userData = {
-        email: this.email,
-        password: this.password,
+        Username: this.username,
+        Password: this.password,
       };
-      await api.post('/api/login', userData).then((response) => {
+      await api.post('/api/user/signin', userData).then((response) => {
         console.log(response);
       }).catch((error) => {
         console.log(error);

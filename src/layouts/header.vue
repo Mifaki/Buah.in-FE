@@ -3,7 +3,7 @@
     <q-header bordered="false" class="header-bg row items-center justify-evenly">
       <q-icon name="img:icons/logo.png" class="logo" />
       <q-btn flat color="black" label="Kategori" class="header-text jakarta-md" no-caps to="kategori-fruits" />
-      <q-input rounded outlined class="search-bar" v-model="search" placeholder="Search" dense>
+      <q-input rounded outlined class="search-bar" v-model="search" placeholder="Cari di Buah.in" dense>
         <template v-slot:prepend>
           <q-icon name="search" />
         </template>
@@ -23,7 +23,7 @@
               <q-item clickable v-close-popup @click="onItemClick">
                 <q-item-section avatar>
                   <q-avatar>
-                    <q-icon name="fa-solid fa-arrows-rotate" />
+                    <q-icon name="fa-solid fa-arrows-rotate" color="primary" />
                   </q-avatar>
                 </q-item-section>
                 <q-item-section>
@@ -34,7 +34,7 @@
               <q-item clickable v-close-popup @click="onItemClick">
                 <q-item-section avatar>
                   <q-avatar>
-                    <q-icon name="fa-solid fa-truck-fast" />
+                    <q-icon name="fa-solid fa-truck-fast" color="primary" />
                   </q-avatar>
                 </q-item-section>
                 <q-item-section>
@@ -45,7 +45,7 @@
               <q-item clickable v-close-popup @click="onItemClick">
                 <q-item-section avatar>
                   <q-avatar>
-                    <q-icon name="fa-regular fa-file-lines" />
+                    <q-icon name="fa-regular fa-file-lines" color="primary" />
                   </q-avatar>
                 </q-item-section>
                 <q-item-section>
@@ -57,7 +57,7 @@
               <q-item clickable v-close-popup @click="onItemClick">
                 <q-item-section avatar>
                   <q-avatar>
-                    <q-icon name="fa-solid fa-arrows-rotate" />
+                    <q-icon name="fa-solid fa-arrows-rotate" color="primary" />
                   </q-avatar>
                 </q-item-section>
                 <q-item-section>
@@ -80,7 +80,7 @@
         <P class="name jakarta-sb q-mb-none q-ml-sm" inline>{{ user.first_name }}</P>
       </div>
       <div v-else class="roww">
-        <q-btn outline color="hijau60" label="Masuk" no-caps class="jakarta-md q-mx-md" to="/" />
+        <q-btn outline color="hijau60" label="Masuk" no-caps class="jakarta-md q-mx-md" to="/login" />
         <q-btn unelevated color="hijau60" label="Daftar" no-caps class="jakarta-md" to="/register" />
       </div>
     </q-header>

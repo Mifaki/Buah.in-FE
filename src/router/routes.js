@@ -34,7 +34,9 @@ const routes = [
       { path: 'checkout', name:'Checkout', component: () => import('pages/Checkout.vue') },
       { path: 'store-id/fruits', name:'StoreIDFruits', component: () => import('pages/StoreIDFruits.vue') },
       { path: 'store-id/ratings', name:'StoreIDRatings', component: () => import('pages/StoreIDRatings.vue') },
-      { path: 'payment', name:'Payment', component: () => import('pages/Payment.vue') }
+      { path: 'payment', name:'Payment', component: () => import('pages/Payment.vue') },
+      { path: 'confirmation-waiting', name:'ConfirmationWaiting', component: () => import('pages/ConfirmationWaiting.vue') },
+      { path: 'confirmation-review', name:'ConfirmationReview', component: () => import('pages/ConfirmationReview.vue') }
     ]
   },
 

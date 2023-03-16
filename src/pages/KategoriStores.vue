@@ -85,29 +85,31 @@
           hide-header virtual-scroll >
           <template v-slot:item="props">
             <div class="q-pa-md">
-              <q-card no-shadow class="store-card q-pa-md">
-                <div class="row justify-between">
-                  <div>
-                    <p class="owner-text jakarta-sb q-mb-none">{{ props.row.owner }}</p>
-                    <p class="city-text jakarta-sb q-mb-none">{{ props.row.city }}</p>
+              <q-item to="/home/store-id/fruits" replace>
+                <q-card no-shadow class="store-card q-pa-md">
+                  <div class="row justify-between">
+                    <div>
+                      <p class="owner-text jakarta-sb q-mb-none">{{ props.row.owner }}</p>
+                      <p class="city-text jakarta-sb q-mb-none">{{ props.row.city }}</p>
+                    </div>
+                    <q-btn outline rounded color="primary" label="Lihat Lebih Banyak" no-caps />
                   </div>
-                  <q-btn outline rounded color="primary" label="Lihat Lebih Banyak" no-caps />
-                </div>
-                <div class="row q-mt-md">
-                  <div class="text-center">
-                    <q-icon :name="props.row.thumbnails[0]" size="88px"/>
-                    <p class="price-text jakarta-b q-mb-none">{{ 'Rp ' + formatNumber(props.row.prices[0]) }}</p>
+                  <div class="row q-mt-md">
+                    <div class="text-center">
+                      <q-icon :name="props.row.thumbnails[0]" size="88px"/>
+                      <p class="price-text jakarta-b q-mb-none">{{ 'Rp ' + formatNumber(props.row.prices[0]) }}</p>
+                    </div>
+                    <div class="text-center q-mx-md" v-if="props.row.thumbnails[1]">
+                      <q-icon :name="props.row.thumbnails[1]" size="88px"/>
+                      <p class="price-text jakarta-b q-mb-none">{{ 'Rp ' + formatNumber(props.row.prices[1]) }}</p>
+                    </div>
+                    <div class="text-center" v-if="props.row.thumbnails[2]">
+                      <q-icon :name="props.row.thumbnails[2]" size="88px"/>
+                      <p class="price-text jakarta-b q-mb-none">{{ 'Rp ' + formatNumber(props.row.prices[2]) }}</p>
+                    </div>
                   </div>
-                  <div class="text-center q-mx-md" v-if="props.row.thumbnails[1]">
-                    <q-icon :name="props.row.thumbnails[1]" size="88px"/>
-                    <p class="price-text jakarta-b q-mb-none">{{ 'Rp ' + formatNumber(props.row.prices[1]) }}</p>
-                  </div>
-                  <div class="text-center" v-if="props.row.thumbnails[2]">
-                    <q-icon :name="props.row.thumbnails[2]" size="88px"/>
-                    <p class="price-text jakarta-b q-mb-none">{{ 'Rp ' + formatNumber(props.row.prices[2]) }}</p>
-                  </div>
-                </div>
-              </q-card>
+                </q-card>
+              </q-item>
             </div>
           </template>
         </q-table>

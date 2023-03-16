@@ -86,33 +86,35 @@
           hide-header virtual-scroll>
           <template v-slot:item="props">
             <div class="q-pa-md">
-              <q-card no-shadow class="card">
-                <q-icon :name="props.row.thumbnail" size="202px" />
-                <div class="card-inside q-mx-md q-mt-sm">
-                  <p class="paragraph jakarta-sb q-mb-none q-mt-sm">{{ props.row.name }}</p>
-                  <div v-if="props.row.discount > 0 || props.row < 100">
-                    <p class="paragraph jakarta-b q-mb-none q-mt-sm">Rp {{ calculateDiscount(props.row.price,
-                      props.row.discount) }}</p>
-                    <div class="row q-mt-sm items-center">
-                      <div class="discount-bg">
-                        <p class="discount-text jakarta-b q-mb-none q-pa-xs">{{ props.row.discount }}%</p>
+              <q-item to="/home/fruit-id" replace>
+                <q-card no-shadow class="card">
+                  <q-icon :name="props.row.thumbnail" size="202px" />
+                  <div class="card-inside q-mx-md q-mt-sm">
+                    <p class="paragraph jakarta-sb q-mb-none q-mt-sm">{{ props.row.name }}</p>
+                    <div v-if="props.row.discount > 0 || props.row < 100">
+                      <p class="paragraph jakarta-b q-mb-none q-mt-sm">Rp {{ calculateDiscount(props.row.price,
+                        props.row.discount) }}</p>
+                      <div class="row q-mt-sm items-center">
+                        <div class="discount-bg">
+                          <p class="discount-text jakarta-b q-mb-none q-pa-xs">{{ props.row.discount }}%</p>
+                        </div>
+                        <p class="caption jakarta-md q-mb-none q-ml-md">Rp <strike>{{ formatNumber(props.row.price)
+                        }}</strike>
+                        </p>
                       </div>
-                      <p class="caption jakarta-md q-mb-none q-ml-md">Rp <strike>{{ formatNumber(props.row.price)
-                      }}</strike>
-                      </p>
+                    </div>
+                    <p v-else class="paragraph jakarta-b q-mb-none q-mt-sm">Rp {{ formatNumber(props.row.price) }}</p>
+                    <p class="caption jakarta-md  q-mb-none q-mt-sm">{{ props.row.city }}</p>
+                    <div v-if="props.row.sold" class="row items-center q-mt-sm">
+                      <q-icon name="star" color="yellow" />
+                      <p class="caption jakarta-md q-mb-none q-ml-sm">{{ props.row.rating.toFixed(1) }}</p>
+                      <p class="caption jakarta-md q-mb-none q-ml-sm">|</p>
+                      <p class="caption jakarta-md q-mb-none q-ml-sm">Terjual</p>
+                      <p class="caption jakarta-md q-mb-none q-ml-sm">{{ props.row.sold }}</p>
                     </div>
                   </div>
-                  <p v-else class="paragraph jakarta-b q-mb-none q-mt-sm">Rp {{ formatNumber(props.row.price) }}</p>
-                  <p class="caption jakarta-md  q-mb-none q-mt-sm">{{ props.row.city }}</p>
-                  <div v-if="props.row.sold" class="row items-center q-mt-sm">
-                    <q-icon name="star" color="yellow" />
-                    <p class="caption jakarta-md q-mb-none q-ml-sm">{{ props.row.rating.toFixed(1) }}</p>
-                    <p class="caption jakarta-md q-mb-none q-ml-sm">|</p>
-                    <p class="caption jakarta-md q-mb-none q-ml-sm">Terjual</p>
-                    <p class="caption jakarta-md q-mb-none q-ml-sm">{{ props.row.sold }}</p>
-                  </div>
-                </div>
-              </q-card>
+                </q-card>
+              </q-item>
             </div>
           </template>
         </q-table>
@@ -352,6 +354,7 @@ export default {
 }
 
 .card {
+  max-width: 202px;
   min-height: 398px;
 }
 

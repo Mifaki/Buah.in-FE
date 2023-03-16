@@ -19,6 +19,7 @@
       </q-card>
       <q-card class="upload q-mt-xl">
         <p class="title jakarta-b text-center q-mb-none">Bukti Pembayaran</p>
+        <q-btn class="buy-button jakarta-sb q-mt-lg" label="Upload Files" text-color="white" unelevated no-caps to="/payment/confirmation" replace />
       </q-card>
     </div>
   </q-page>
@@ -121,6 +122,13 @@ export default {
   height: 599px;
   padding: 32px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+}
+
+.buy-button {
+  width: 100%;
+  height: 40px;
+  background-color: #116530;
   border-radius: 15px;
 }
 </style>

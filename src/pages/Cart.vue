@@ -48,7 +48,7 @@
           <p class="total-cost-text q-mb-none">Ringkasan Belanja</p>
           <p class="total-cost-text q-mb-none">{{ 'Rp ' + formatNumber(totalCost) }}</p>
         </div>
-        <q-btn class="buy-button jakarta-sb q-mt-lg" label="Beli" text-color="white" unelevated no-caps />
+        <q-btn class="buy-button jakarta-sb q-mt-lg" label="Beli" text-color="white" unelevated no-caps to="/home/checkout" replace />
       </q-card>
     </div>
   </q-page>
@@ -214,8 +214,8 @@ export default {
 }
 
 .card {
-  width: 332px;
-  height: min-content;
+  min-width: 332px;
+  height: 250px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
   border-radius: 15px;
 }

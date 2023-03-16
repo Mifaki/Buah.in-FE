@@ -220,7 +220,7 @@
           <p class="total-cost-text jakarta-b q-mb-none">Total Tagihan</p>
           <p class="total-cost-text jakarta-b q-mb-none">{{ 'Rp ' + formatNumber(totalCost) }}</p>
         </div>
-        <q-btn class="buy-button jakarta-sb q-mt-lg" label="Beli" text-color="white" unelevated no-caps />
+        <q-btn class="buy-button jakarta-sb q-mt-lg" label="Beli" text-color="white" unelevated no-caps to="/payment" replace />
       </q-card>
     </div>
   </q-page>

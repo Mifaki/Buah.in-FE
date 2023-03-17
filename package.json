@@ -6,9 +6,7 @@
   "author": "Faiz <agustianto.d19@gmail.com>",
   "private": true,
   "scripts": {
-    "test": "echo \"No test specified\" && exit 0",
-    "build": "quasar build",
-    "deploy": "vercel"
+    "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",

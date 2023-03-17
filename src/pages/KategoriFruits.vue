@@ -88,7 +88,7 @@
             <div class="q-pa-md">
               <q-item to="/home/fruit-id" replace>
                 <q-card no-shadow class="fruits-card">
-                  <q-icon :name="props.row.thumbnail" size="202px" />
+                  <q-icon :name=props.row.thumbnail size="202px" />
                   <div class="fruits-card-inside q-mx-md q-mt-sm">
                     <p class="hitam30-16 jakarta-sb q-mb-none q-mt-sm">{{ props.row.name }}</p>
                     <div v-if="props.row.discount > 0 || props.row < 100">
@@ -151,7 +151,7 @@ const rows = [
   {
     id: '1',
     name: 'Alpukat Mentega',
-    thumbnail: 'img:icons/home/alpukat-mentega.png',
+    thumbnail: 'img:icons/KategoriFruits/pages/assets/alpukat-mentega.png',
     price: 25200,
     discount: 10,
     city: 'Kabupaten Bojonegoro',
@@ -178,7 +178,7 @@ const rows = [
   {
     id: '3',
     name: 'Apel Malang',
-    thumbnail: 'img:icons/home/apel-malang.png',
+    thumbnail: 'img:icons/home/apel-malang.svg',
     price: 11000,
     city: 'Kota Batu',
     kondisi: 'Baru panen',

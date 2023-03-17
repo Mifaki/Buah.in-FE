@@ -66,6 +66,8 @@
 </template>
 
 <script>
+import { ref } from 'vue';
+import { api } from 'src/boot/axios';
 
 const columns = [
   {
@@ -221,10 +223,24 @@ const rows = [
 export default {
   name: 'Home',
 
+  data() {
+    return {
+      nama: ref(null),
+      kondisi: ref(null),
+      description: ref(null),
+      price: ref(null),
+      discount: ref(null),
+      berat: ref(null),
+      stok: ref(null),
+      alamatbuah: ref(null),
+      image_link: ref(null),
+    };
+  },
+
   setup() {
     return {
       columns,
-      rows
+      rows,
     }
   },
 
@@ -242,8 +258,29 @@ export default {
       const discountedPrice = price - discountAmount;
       return this.formatNumber(discountedPrice);
     }
-  }
-}
+  },
+
+  async mounted () {
+      const fruitsData = {
+        nama: this.nama,
+        kondisi: this.kondisi,
+        description: this.description,
+        price: this.price,
+        discount: this.discount,
+        berat: this.berat,
+        stok: this.stok,
+        alamatbuah: this.alamatbuah,
+        image_link: this.image_link
+      };
+      await api.get('/api/anonbuah/2', fruitsData).then((response) => {
+        let data = response.data;
+        console.log(data);
+      }).catch((error) => {
+        console.log(error);
+      })
+    },
+  };
+
 
 </script>
 

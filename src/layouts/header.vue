@@ -114,7 +114,7 @@ export default {
     const token = localStorage.getItem('token')
     if (token) {
       try {
-        const response = await api.get('api/users', {
+        const response = await api.get('api/users/:user', {
           headers: {
             Authorization: `Bearer ${token}`
           }

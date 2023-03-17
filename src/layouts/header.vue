@@ -44,6 +44,19 @@
                 </q-item-section>
               </q-item>
 
+              <router-link to="/confirmation-waiting" replace class="none">
+                <q-item clickable v-close-popup @click="onItemClick">
+                  <q-item-section avatar>
+                    <q-avatar>
+                      <q-icon name="fa-regular fa-clock" color="primary" />
+                    </q-avatar>
+                  </q-item-section>
+                  <q-item-section>
+                    <q-item-label class="jakarta-md payment-label">Menunggu Konfirmasi</q-item-label>
+                  </q-item-section>
+                </q-item>
+              </router-link>
+
               <q-item clickable v-close-popup @click="onItemClick">
                 <q-item-section avatar>
                   <q-avatar>
@@ -55,19 +68,9 @@
                 </q-item-section>
               </q-item>
 
-
-              <q-item clickable v-close-popup @click="onItemClick">
-                <q-item-section avatar>
-                  <q-avatar>
-                    <q-icon name="fa-solid fa-arrows-rotate" color="primary" />
-                  </q-avatar>
-                </q-item-section>
-                <q-item-section>
-                  <q-item-label class="jakarta-md payment-label">Pesanan diproses</q-item-label>
-                </q-item-section>
-              </q-item>
             </q-item-section>
           </q-item>
+
           <q-item v-else="currentPage" v-for="notification in notifications" :key="notification.id" class="q-mt-sm">
             <q-item-section>
               <q-item-label>{{ notification.title }}</q-item-label>
@@ -170,5 +173,10 @@ export default {
 
 .toggle-text {
   color: #ADAFB3;
+}
+
+.none {
+  color: #323741;
+  text-decoration: none;
 }
 </style>

@@ -2,7 +2,7 @@
   <q-page>
     <div class="paymentConfirmation-container">
       <q-icon name="img:icons/logo.png" class="payment-logo" />
-      <q-icon name="img:Image-url-here" class="ilustration q-mt-xl" />
+      <q-icon name="img:icons/payment/ilustration.png" class="ilustration q-mt-xl" />
       <p class="hitam30-16 jakarta-b q-mb-none text-center q-mt-md">Bukti pembayaran sudah berhasil diunggah <br> Cari buah
         lainnya selagi menunggu verifikasi !</p>
       <q-btn label="Kembali ke Beranda" class="button jakarta-b" unelevated no-caps @click="navigateToRoute()"/>

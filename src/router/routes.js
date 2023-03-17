@@ -29,8 +29,11 @@ const routes = [
     ]
   },
   {
-    path: '/fruit-id',
+    path: '/fruit-:id',
     component: () => import('layouts/header.vue'),
+    meta: {
+      auth: true
+    },
     children: [
       { path: '', name:'FruitID', component: () => import('pages/FruitID.vue') },
     ]
@@ -53,14 +56,14 @@ const routes = [
     path: '/cart',
     component: () => import('layouts/header.vue'),
     children: [
-      { path: '', name:'Cart', component: () => import('pages/Cart.vue') },
+      { path: '', name:'Cart', component: () => import('src/pages/CartPagevue') },
     ]
   },
   {
     path: '/cart',
     component: () => import('layouts/header.vue'),
     children: [
-      { path: '', name:'Cart', component: () => import('pages/Cart.vue') },
+      { path: '', name:'CartPage', component: () => import('pages/CartPage.vue') },
     ]
   },
   {
@@ -100,20 +103,18 @@ const routes = [
   },
   {
     path: '/payment',
-    component: () => import('layouts/header.vue'),
+    component: () => import('layouts/BlankLayout.vue'),
     children: [
       { path: '', name:'Payment', component: () => import('pages/Payment.vue') },
     ]
   },
   {
     path: '/payment-confirmation',
-    component: () => import('layouts/header.vue'),
+    component: () => import('layouts/BlankLayout.vue'),
     children: [
       { path: '', name:'PaymentConfirmation', component: () => import('pages/PaymentConfirmation.vue') },
     ]
   },
-
-
   // Always leave this as last one,
   // but you can also remove it
   {

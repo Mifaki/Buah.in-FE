@@ -1,4 +1,4 @@
-import { LocalStorage } from 'quasar'
+import { LocalStorage, Notify } from 'quasar'
 import { route } from 'quasar/wrappers'
 import { createRouter, createMemoryHistory, createWebHistory, createWebHashHistory } from 'vue-router'
 import routes from './routes'
@@ -33,7 +33,7 @@ export default route(function (/* { store, ssrContext } */) {
         next({
           path: '/login'
         })
-        this.$q.notify({
+        Notify.create({
           color: 'red',
           message: 'Anda Belum Login',
           position: 'bottom',

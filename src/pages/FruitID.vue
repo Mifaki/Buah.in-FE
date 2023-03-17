@@ -79,6 +79,8 @@ import { ref } from 'vue';
 
 export default {
   name: 'FruitID',
+  props: ['id'],
+
   data() {
     return {
       id: '4',
@@ -90,6 +92,18 @@ export default {
       berat: 3,
       desc: 'Lorem ipsum dolor sit amet, consectetur',
       stock: 20,
+      fruit: {}
+    }
+  },
+
+  async created() {
+    try {
+      const response = await fetch(`/api/fruits/${this.$route.params.id}`)
+      const data = await response.json()
+      this.fruit = data
+      console.log(data);
+    } catch (error) {
+      console.log();(error)
     }
   },
 

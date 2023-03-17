@@ -18,8 +18,11 @@
         <p class="hitam30-16 jakarta-b q-mb-none">Rp {{ formatNumber(this.total) }}</p>
       </q-card>
       <q-card class="upload q-mt-xl">
-        <p class="title jakarta-b text-center q-mb-none">Bukti Pembayaran</p>
-        <q-btn class="buy-button jakarta-sb q-mt-lg" label="Upload Files" text-color="white" unelevated no-caps to="/payment-confirmation" replace />
+        <p class="hitam30-24 jakarta-b text-center q-mb-none q-mb-xl">Bukti Pembayaran</p>
+        <q-uploader url="http://localhost:4444/upload" color="primary" flat bordered accept=".jpeg, .png, .pdf/*"
+          @rejected="onRejected" class="q-ml-xl q-pl-md" />
+        <q-btn class="buy-button jakarta-sb q-mt-xl" label="Upload Files" text-color="white" unelevated no-caps
+          to="/payment-confirmation" replace />
       </q-card>
     </div>
   </q-page>
@@ -27,6 +30,7 @@
 
 <script>
 import { ref } from 'vue';
+import { Notify } from 'quasar';
 
 export default {
   name: 'Payment',
@@ -56,12 +60,20 @@ export default {
       days.value = parseInt(hours.value / 24);
     }, 1000);
 
+    function onRejected(rejectedEntries) {
+      Notify.create({
+        type: 'negative',
+        message: `${rejectedEntries.length} file(s) did not pass validation constraints`
+      })
+    }
+
     return {
       days,
       hours,
       minutes,
       seconds,
-      launchDate
+      launchDate,
+      onRejected
     }
   },
 

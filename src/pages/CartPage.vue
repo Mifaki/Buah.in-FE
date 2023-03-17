@@ -107,7 +107,7 @@ const rows = [
 ]
 
 export default {
-  name: 'Cart',
+  name: 'CartPage',
 
   setup() {
     return {

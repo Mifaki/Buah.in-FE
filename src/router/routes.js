@@ -60,13 +60,6 @@ const routes = [
     ]
   },
   {
-    path: '/cart',
-    component: () => import('layouts/header.vue'),
-    children: [
-      { path: '', name:'CartPage', component: () => import('pages/CartPage.vue') },
-    ]
-  },
-  {
     path: '/checkout',
     component: () => import('layouts/header.vue'),
     children: [

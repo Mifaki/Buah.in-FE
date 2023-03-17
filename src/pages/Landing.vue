@@ -3,7 +3,7 @@
     <div class="landing-image">
       <q-card class="headline-card justify-center">
         <div class="row items-end justify-center q-mt-xl">
-          <p class="headline jakarta-b q-mb-none" style="color: red;">Temukan Beragam</p>
+          <p class="headline jakarta-b q-mb-none">Temukan Beragam</p>
           <p class="highlight jakarta-b q-mb-none q-mx-sm">Buah Segar</p>
           <p class="headline jakarta-b q-mb-none">Langsung diantar ke Rumahmu</p>
         </div>

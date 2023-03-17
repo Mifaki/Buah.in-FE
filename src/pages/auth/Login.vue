@@ -31,11 +31,12 @@
             <q-checkbox size="55px" v-model="orange" label="Ingat Saya" class="jakarta-sb" />
             <q-btn flat label="Lupa Kata Sandi?" no-caps size="16px" class="hijau50-24 " />
           </div>
-          <q-btn class="masuk-button jakarta-b q-mt-xl q-mb-md" type="submit" unelevated label="Masuk" text-color="white" no-caps  />
+          <q-btn class="masuk-button jakarta-b q-mt-xl q-mb-md" type="submit" unelevated label="Masuk" text-color="white"
+            no-caps />
         </q-form>
         <div class="row items-center justify-center">
           <p class="jakarta-sb q-mb-none q-pa-none">Butuh Bantuan?</p>
-          <q-btn flat label="Hubungi Buah.in Care" no-caps  class="hijau50-24 q-pa-none" />
+          <q-btn flat label="Hubungi Buah.in Care" no-caps class="hijau50-24 q-pa-none" />
         </div>
       </div>
     </q-page>
@@ -61,13 +62,25 @@ export default {
   methods: {
     async submit() {
       const userData = {
-        Username: this.username,
-        Password: this.password,
+        username: this.username,
+        password: this.password,
       };
       await api.post('/api/user/signin', userData).then((response) => {
+        let data = response.data;
+        console.log(data);
+        localStorage.setItem('token', data.token);
         console.log(response);
+        if (response.status === 200) {
+          this.$router.push('/home');
+        }
       }).catch((error) => {
         console.log(error);
+        this.$q.notify({
+          color: 'red',
+          message: 'Login failed',
+          position: 'bottom',
+          timeout: 3000,
+        });
       })
     },
   },

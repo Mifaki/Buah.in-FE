@@ -77,7 +77,7 @@
       <div class="seperator" />
       <div v-if="loggedIn" class="row items-center">
         <q-icon name="img:icons\pofile.png" size="29px" />
-        <P class="name jakarta-sb q-mb-none q-ml-sm" inline>{{ user.first_name }}</P>
+        <P class="name jakarta-sb q-mb-none q-ml-sm" inline>{{ users.username }}</P>
       </div>
       <div v-else class="roww">
         <q-btn outline color="hijau60" label="Masuk" no-caps class="jakarta-md q-mx-md" to="/login" />
@@ -100,7 +100,7 @@ export default {
     return {
       search: ref(null),
       loggedIn: false,
-      user: null,
+      users: null,
       currentPage: ref(true),
       showDropdown: ref(false),
       notificationIcon: 'icons/bell-regular.svg',
@@ -110,15 +110,21 @@ export default {
       ]
     }
   },
-  async mounted() {
-    try {
-      const response = await api.get('https://reqres.in/api/users/2');
-      if (response && response.data) {
+  async mounted () {
+    const token = localStorage.getItem('token')
+    if (token) {
+      try {
+        const response = await api.get('api/users', {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+        this.users = response.data;
+        console.log(response);
         this.loggedIn = true;
-        this.user = response.data.data;
+      } catch (error) {
+        console.error(error)
       }
-    } catch (error) {
-      console.error(error);
     }
   }
 }

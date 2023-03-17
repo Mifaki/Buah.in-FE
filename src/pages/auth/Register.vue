@@ -72,13 +72,14 @@ export default {
   methods: {
     async submit() {
       const userData = {
-        Username: this.username,
-        Email: this.email,
-        Password: this.password,
-        NoTelp: this.noTelp,
+        username: this.username,
+        email: this.email,
+        password: this.password,
+        notelp: this.noTelp,
       }
-      // console.log(userData);
       await api.post('/api/user/register', userData).then((response) => {
+        this.user = response.data;
+        localStorage.setItem('token', user.token);
         console.log(response)
       }).catch((error) => {
         console.log(error);

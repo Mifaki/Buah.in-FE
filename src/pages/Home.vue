@@ -30,7 +30,7 @@
         v-model:pagination="pagination" :rows-per-page-options="[0]" hide-bottom>
       <template v-slot:item="props">
         <div class="q-pa-md">
-          <q-item to="/home/fruit-id" replace>
+          <q-item to="/fruit-id" replace>
             <q-card no-shadow class="fruits-card">
               <q-icon :name="props.row.thumbnail" size="202px" />
               <div class="fruits-card-inside q-mx-md q-mt-sm">

@@ -19,7 +19,7 @@
       </q-card>
       <q-card class="upload q-mt-xl">
         <p class="title jakarta-b text-center q-mb-none">Bukti Pembayaran</p>
-        <q-btn class="buy-button jakarta-sb q-mt-lg" label="Upload Files" text-color="white" unelevated no-caps to="/payment/confirmation" replace />
+        <q-btn class="buy-button jakarta-sb q-mt-lg" label="Upload Files" text-color="white" unelevated no-caps to="/payment-confirmation" replace />
       </q-card>
     </div>
   </q-page>

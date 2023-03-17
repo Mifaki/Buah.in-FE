@@ -85,7 +85,7 @@
           hide-header virtual-scroll >
           <template v-slot:item="props">
             <div class="q-pa-md">
-              <q-item to="/home/store-id/fruits" replace>
+              <q-item to="/store-id-fruits" replace>
                 <q-card no-shadow class="store-card q-pa-md">
                   <div class="row justify-between">
                     <div>

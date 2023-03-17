@@ -86,7 +86,7 @@
           hide-header virtual-scroll>
           <template v-slot:item="props">
             <div class="q-pa-md">
-              <q-item to="/home/fruit-id" replace>
+              <q-item to="/fruit-id" replace>
                 <q-card no-shadow class="fruits-card">
                   <q-icon :name=props.row.thumbnail size="202px" />
                   <div class="fruits-card-inside q-mx-md q-mt-sm">
@@ -151,7 +151,7 @@ const rows = [
   {
     id: '1',
     name: 'Alpukat Mentega',
-    thumbnail: 'img:icons/KategoriFruits/pages/assets/alpukat-mentega.png',
+    thumbnail: 'img:icons/home/alpukat-mentega.png',
     price: 25200,
     discount: 10,
     city: 'Kabupaten Bojonegoro',

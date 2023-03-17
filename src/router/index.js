@@ -1,3 +1,4 @@
+import { LocalStorage } from 'quasar'
 import { route } from 'quasar/wrappers'
 import { createRouter, createMemoryHistory, createWebHistory, createWebHashHistory } from 'vue-router'
 import routes from './routes'
@@ -25,6 +26,27 @@ export default route(function (/* { store, ssrContext } */) {
     // quasar.conf.js -> build -> publicPath
     history: createHistory(process.env.VUE_ROUTER_BASE)
   })
+
+  Router.beforeEach((to, from, next) => {
+    if (to.matched.some(record => record.meta.auth)) {
+      if (LocalStorage.getItem('token') == null || LocalStorage.getItem('token') == undefined) {
+        next({
+          path: '/login'
+        })
+        this.$q.notify({
+          color: 'red',
+          message: 'Anda Belum Login',
+          position: 'bottom',
+          timeout: 3000,
+        });
+      } else {
+        next();
+      }
+    } else {
+      next();
+    }
+  })
+
 
   return Router
 })

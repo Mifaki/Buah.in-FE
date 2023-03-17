@@ -16,7 +16,7 @@
       </div>
       <div class="right-container q-mt-xl">
         <div class="row q-ml-md">
-          <router-link to="fruits" class="link">
+          <router-link to="store-id-fruits" class="link">
             <div class="row cursor-pointer toggle-text jakarta-b q-mb-none q-px-md">
               <q-icon name="fa-solid fa-seedling" />
               <p class="q-ml-sm q-mb-none">Buah</p>

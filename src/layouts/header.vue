@@ -1,14 +1,16 @@
 <template>
   <q-layout view="hHh lpR fF2">
     <q-header bordered="false" class="header-bg row items-center justify-evenly">
-      <q-icon name="img:icons/logo.png" class="logo-header" />
-      <q-btn flat color="black" label="Kategori" class="header-text jakarta-md" no-caps  to="/home/kategori-fruits" replace />
+      <q-item to="/home" replace>
+        <q-icon name="img:icons/logo.png" class="logo-header" />
+      </q-item>
+      <q-btn flat color="black" label="Kategori" class="header-text jakarta-md" no-caps  to="/kategori-fruits" replace />
       <q-input rounded outlined class="search-bar" v-model="search" placeholder="Cari di Buah.in" dense>
         <template v-slot:prepend>
           <q-icon name="search" />
         </template>
       </q-input>
-      <q-btn flat round color="black" icon="fa-solid fa-cart-shopping" to="/home/cart" replace />
+      <q-btn flat round color="black" icon="fa-solid fa-cart-shopping" to="/cart" replace />
       <q-btn-dropdown v-if="loggedIn" icon="img:icons/notification.png" no-caret flat v-model="showDropdown"
         @mouseenter="showDropdown = true" dense>
         <div @mouseleave="showDropdown = false">

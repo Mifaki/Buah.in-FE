@@ -33,7 +33,7 @@
               <p v-else class="hitam30 jakarta-b q-mb-none">Rp {{ formatNumber(props.row.price) }}</p>
             </div>
           </div>
-          <q-btn outline rounded color="primary" label="Konfirmasi Pesanan" no-caps class="confirmation-button" />
+          <q-btn outline rounded color="primary" label="Konfirmasi Pesanan" no-caps class="waiting-button" />
         </template>
       </q-table>
     </div>
@@ -120,7 +120,4 @@ export default {
 </script>
 
 <style>
-.confirmation-button {
-  width: 100%;
-}
 </style>

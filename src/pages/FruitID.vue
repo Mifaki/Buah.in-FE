@@ -54,7 +54,7 @@
           <q-btn class="cart-button jakarta-sb q-mt-lg" icon="add" label="Keranjang" text-color="white" unelevated no-caps
             @click="showNotification()" />
           <q-btn class="checkout-button jakarta-sb q-mt-md" color="transparant" label="Beli Sekarang" text-color="#116530"
-            to="/home/checkout" replace unelevated no-caps />
+            to="/checkout" replace unelevated no-caps />
         </q-card>
       </div>
       <div class="q-mt-xl">

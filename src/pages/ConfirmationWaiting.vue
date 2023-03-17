@@ -1,6 +1,6 @@
 <template>
   <q-page>
-    <div class="container">
+    <div class="confirmationWaiting-container">
       <div class="row">
         <div class="row cursor-pointer active-page jakarta-b q-mb-none q-px-md">
           <p class="q-ml-sm q-mb-none">Menunggu Konfirmasi</p>
@@ -11,26 +11,26 @@
           </div>
         </router-link>
       </div>
-      <q-table :rows="rows" :columns="columns" row-key="name" class="table" grid hide-header hide-bottom>
+      <q-table :rows="rows" :columns="columns" row-key="name" class="confirmationWaiting-table" grid hide-header hide-bottom>
         <template v-slot:item="props">
           <div class="column">
-            <p class="store-name jakarta-sb q-mb-none q-mt-sm q-mb-sm">{{ props.row.store }}</p>
-            <p class="city-text jakarta-sb q-mb-none q-mb-md">{{ props.row.city }}</p>
+            <p class="hitam30-16 jakarta-sb q-mb-none q-mt-sm q-mb-sm">{{ props.row.store }}</p>
+            <p class="hitam20 jakarta-sb q-mb-none q-mb-md">{{ props.row.city }}</p>
           </div>
           <div class="cart-item row q-mt-sm q-mb-md">
             <q-icon :name="props.row.thumbnail" size="58px" />
             <div class="column justify-between q-ml-md">
-              <p class="name-text jakarta-sb q-mb-none">{{ props.row.name }}</p>
+              <p class="hitam30-16 jakarta-sb q-mb-none">{{ props.row.name }}</p>
               <div v-if="props.row.discount > 0 || props.row < 100" class="row items-center">
-                <p class="discount-price-text jakarta-md q-mb-none">Rp <strike>{{
+                <p class="discount-hitam30 jakarta-md q-mb-none">Rp <strike>{{
                   formatNumber(props.row.price)
                 }}</strike>
                 </p>
-                <p class="price-text jakarta-b q-mb-none q-mx-sm">Rp {{
+                <p class="hitam30 jakarta-b q-mb-none q-mx-sm">Rp {{
                   formatNumber(calculateDiscount(props.row.price,
                     props.row.discount)) }}</p>
               </div>
-              <p v-else class="price-text jakarta-b q-mb-none">Rp {{ formatNumber(props.row.price) }}</p>
+              <p v-else class="hitam30 jakarta-b q-mb-none">Rp {{ formatNumber(props.row.price) }}</p>
             </div>
           </div>
           <q-btn outline rounded color="primary" label="Konfirmasi Pesanan" no-caps class="confirmation-button" />
@@ -120,44 +120,7 @@ export default {
 </script>
 
 <style>
-.container {
-  margin-left: 139px;
-  margin-top: 64px;
-}
-
-.active-page {
-  border-bottom: 2px solid #116530;
-  color: #116530;
-}
-
-.link {
-  text-decoration: none;
-}
-
-.toggle-text {
-  font-size: 16px;
-  color: #ADAFB3;
-}
-
-.table {
-  width: 300px;
-}
-
 .confirmation-button {
   width: 100%;
-}
-
-.store-name,
-.name-text {
-  font-size: 16px;
-  color: #323741;
-}
-
-.city-text {
-  color: #70737A;
-}
-
-.price-text {
-  color: #323741;
 }
 </style>

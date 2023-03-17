@@ -1,25 +1,25 @@
 <template>
   <q-layout view="hHh lpR fF2">
-    <q-page class="main-page column items-center">
-      <q-img class="logo q-mt-lg" src="icons/logo.png" />
+    <q-page class="column items-center">
+      <q-img class="logo-auth q-mt-lg" src="icons/logo.png" />
       <div class="row justify-evenly q-mt-xl">
-        <q-img src="icons\resgistration.png" class="ilustration" />
+        <q-img src="icons\resgistration.png" class="ilustration-register" />
         <div class="register-form">
           <P class="title jakarta-sb q-mb-none q-mt-xl">Daftar Sekarang</P>
           <div class="row items-center justify-center">
-            <P class="sub jakarta-r text-center q-mb-none">Sudah punya akun Buah.in?</P>
-            <q-btn flat label="Masuk" no-caps class="green q-pa-none" size="28px" />
+            <P class="hitam30-24 jakarta-r text-center q-mb-none">Sudah punya akun Buah.in?</P>
+            <q-btn flat label="Masuk" no-caps class="hijau50-24 q-pa-none" size="28px" />
           </div>
           <q-form @submit.prevent="submit">
-            <p class="jakarta-sb q-mb-none q-px-sm q-mt-xl" style="font-size: 16px; color: #116530">
+            <p class="hijau60-16 jakarta-sb q-mb-none q-px-sm q-mt-xl">
               Username
             </p>
             <q-input outlined round v-model="username" class="q-mt-sm" :rules="[(val) => !!val]" />
-            <p class="label jakarta-sb q-mb-none q-px-sm">
+            <p class="hijau60-16 jakarta-sb q-mb-none q-px-sm">
               Email
             </p>
             <q-input outlined round v-model="email" class="q-mt-sm" :rules="[(val) => !!val]" />
-            <p class="label jakarta-sb q-mb-none q-px-sm q-mt-md">
+            <p class="hijau60-16 jakarta-sb q-mb-none q-px-sm q-mt-md">
               Password
             </p>
             <q-input class="q-mt-sm" outlined v-model="password" :type="isPwd ? 'password' : 'text'" :rules="[
@@ -32,7 +32,7 @@
                 <q-icon :name="isPwd ? 'visibility_off' : 'visibility'" class="cursor-pointer" @click="isPwd = !isPwd" />
               </template>
             </q-input>
-            <p class="jakarta-sb q-mb-none q-px-sm q-mt-md" style="font-size: 16px; color: #116530">
+            <p class="hijau60-16 jakarta-sb q-mb-none q-px-sm q-mt-md">
               Nomor Telepon
             </p>
             <q-input outlined round v-model="notelp" class="q-mt-sm" :rules="[(val) => !!val]" />
@@ -89,50 +89,10 @@ export default {
 </script>
 
 <style>
-.main-page {
-  padding: 0 160px;
-  background-color: #f5f5f5;
-  height: min-content;
-}
-
-.register-form {
-  width: 546px;
-  height: 795px;
-  background-color: white;
-  padding: 0 24px;
-  border-radius: 25px;
-}
-
-.logo {
-  width: 322px;
-  height: 72px;
-}
-
-.layout {
-  width: 100%;
-}
-
-.ilustration {
-  width: 581px;
-  height: 624px;
-}
-
 .title {
+  color: #323741;
   font-size: 36px;
   text-align: center
-}
-
-.sub {
-  font-size: 24px;
-}
-
-.green {
-  color: #58936e;
-}
-
-.label {
-  font-size: 16px;
-  color: #116530
 }
 
 .button {

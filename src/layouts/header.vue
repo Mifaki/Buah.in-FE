@@ -1,7 +1,7 @@
 <template>
   <q-layout view="hHh lpR fF2">
     <q-header bordered="false" class="header-bg row items-center justify-evenly">
-      <q-icon name="img:icons/logo.png" class="logo" />
+      <q-icon name="img:icons/logo.png" class="logo-header" />
       <q-btn flat color="black" label="Kategori" class="header-text jakarta-md" no-caps  to="/home/kategori-fruits" replace />
       <q-input rounded outlined class="search-bar" v-model="search" placeholder="Cari di Buah.in" dense>
         <template v-slot:prepend>
@@ -129,16 +129,6 @@ export default {
   height: 80px;
   background-color: white;
   box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.15);
-}
-
-.logo {
-  height: 37px;
-  width: 167px;
-}
-
-.header-text {
-  font-size: 16px;
-  color: #323741;
 }
 
 .search-bar {

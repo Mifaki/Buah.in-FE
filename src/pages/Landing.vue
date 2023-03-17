@@ -1,6 +1,6 @@
 <template>
   <q-page>
-    <div class="image">
+    <div class="landing-image">
       <q-card class="headline-card justify-center">
         <div class="row items-end justify-center q-mt-xl">
           <p class="headline jakarta-b q-mb-none">Temukan Beragam</p>
@@ -32,7 +32,7 @@
       </div>
     </div>
     <div class="visi-container row justify-center items-center">
-      <q-icon name="img:icons/visi.png" class="visi" />
+      <q-icon name="img:icons/visi.png" class="visi-image" />
       <div>
         <P class="title jakarta-b q-mb-none">Visi Buah.in</P>
         <p class="visi-text jakarta-md q-mb-none text-justify q-mt-md">Menjadi platform e-commerce yang terkemuka dan
@@ -59,7 +59,7 @@
           </li>
         </ol>
       </div>
-      <q-icon name="img:icons/misi.png" class="misi" />
+      <q-icon name="img:icons/misi.png" class="misi-image" />
     </div>
     <div class="recomendation column justify-center">
       <p class="paragraph recom jakarta-sb q-mb-none">Rekomendasi Buah Buat Kamu</p>
@@ -67,12 +67,12 @@
         v-model:pagination="pagination" :rows-per-page-options="[5]" hide-bottom class="table column justify-center ">
         <template v-slot:item="props">
           <div class="q-pa-md">
-            <q-card no-shadow class="card">
+            <q-card no-shadow class="fruits-card">
               <q-icon :name="props.row.thumbnail" size="202px" />
-              <div class="card-inside q-mx-md q-mt-sm">
-                <p class="name-text jakarta-sb q-mb-none q-mt-sm">{{ props.row.name }}</p>
+              <div class="fruits-card-inside q-mx-md q-mt-sm">
+                <p class="hitam30-16 jakarta-sb q-mb-none q-mt-sm">{{ props.row.name }}</p>
                 <div v-if="props.row.discount > 0 || props.row < 100">
-                  <p class="price-text jakarta-b q-mb-none q-mt-sm">Rp {{ calculateDiscount(props.row.price,
+                  <p class="hitam30-16 jakarta-b q-mb-none q-mt-sm">Rp {{ calculateDiscount(props.row.price,
                     props.row.discount) }}</p>
                   <div class="row q-mt-sm items-center">
                     <div class="discount-bg">
@@ -83,14 +83,14 @@
                     </p>
                   </div>
                 </div>
-                <p v-else class="price-text jakarta-b q-mb-none q-mt-sm">Rp {{ formatNumber(props.row.price) }}</p>
-                <p class="caption jakarta-md  q-mb-none q-mt-sm">{{ props.row.city }}</p>
+                <p v-else class="hitam30-16 jakarta-b q-mb-none q-mt-sm">Rp {{ formatNumber(props.row.price) }}</p>
+                <p class="hitam20 jakarta-md  q-mb-none q-mt-sm">{{ props.row.city }}</p>
                 <div v-if="props.row.sold" class="row items-center q-mt-sm">
                   <q-icon name="star" color="yellow" />
-                  <p class="caption jakarta-md q-mb-none q-ml-sm">{{ props.row.rating }}</p>
-                  <p class="caption jakarta-md q-mb-none q-ml-sm">|</p>
-                  <p class="caption jakarta-md q-mb-none q-ml-sm">Terjual</p>
-                  <p class="caption jakarta-md q-mb-none q-ml-sm">{{ props.row.sold }}</p>
+                  <p class="hitam20 jakarta-md q-mb-none q-ml-sm">{{ props.row.rating }}</p>
+                  <p class="hitam20 jakarta-md q-mb-none q-ml-sm">|</p>
+                  <p class="hitam20 jakarta-md q-mb-none q-ml-sm">Terjual</p>
+                  <p class="hitam20 jakarta-md q-mb-none q-ml-sm">{{ props.row.sold }}</p>
                 </div>
               </div>
             </q-card>
@@ -272,48 +272,6 @@ export default {
 </script>
 
 <style>
-.image {
-  width: 100%;
-  height: 475px;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  padding-left: 36px;
-  background-image: url('/icons/landingBanner.png');
-}
-
-.headline-card {
-  width: 700px;
-  height: min-content;
-  backdrop-filter: blur(12.5px);
-  background: rgba(232, 232, 232, 0.25);
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.headline {
-  font-size: 42px;
-  color: #E7F0EA;
-}
-
-.highlight {
-  font-size: 42px;
-  color: #FFCC1D
-}
-
-.circle-1 {
-  background-color: #DBD24D ;
-}
-
-.circle-2{
-  background-color: #F7982D ;
-}
-
-.circle-3{
-  background-color: #FFDB61 ;
-}
-
-
 .description {
   font-size: 16px;
   color: #E7F0EA;
@@ -334,86 +292,11 @@ export default {
   min-width:349px;
 }
 
-.list {
-  margin: 0 210px;
-  margin-top: 100px;
-}
-
-.paragraph {
-  max-width: 240px;
-  font-size: 24px;
-  color: #323741;
-}
-
-.visi {
-  width: 550px;
-  height: 321px;
-  margin-right: 70px;
-}
-
-.visi-text {
-  font-size: 30px;
-  color: #323741;
-  max-width: 683px;
-}
-
-.visi-container {
-  margin-top: 130px;
-}
-
-.visi-container {
-  margin-top: 55px;
-}
-
-.misi {
-  width: 550px;
-  height: 431px;
-  margin-left: 77px;
-}
-
-.misi-text {
-  font-size: 30px;
-  color: #323741;
-  max-width: 676px;
-  ;
-}
-
 .recomendation {
   margin-top: 150px;
 }
 
 .table {
   align-items: center;
-}
-
-.caption {
-  font-size: 14px;
-  color: #70737A;
-}
-
-.name-text,
-.price-text {
-  font-size: 16px;
-  color: #323741;
-}
-
-.card {
-  min-height: 398px;
-}
-
-.card-inside {
-  max-width: 170px;
-}
-
-.discount-bg {
-  width: min-content;
-  height: min-content;
-  background-color: #F8D3D2;
-  border-radius: 5px;
-}
-
-.discount-text {
-  font-size: 12px;
-  color: #E4504A;
 }
 </style>

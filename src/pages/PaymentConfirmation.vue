@@ -1,9 +1,9 @@
 <template>
   <q-page>
-    <div class="container">
-      <q-icon name="img:icons/logo.png" class="logo" />
+    <div class="paymentConfirmation-container">
+      <q-icon name="img:icons/logo.png" class="payment-logo" />
       <q-icon name="img:Image-url-here" class="ilustration q-mt-xl" />
-      <p class="text jakarta-b q-mb-none text-center q-mt-md">Bukti pembayaran sudah berhasil diunggah <br> Cari buah
+      <p class="hitam30-16 jakarta-b q-mb-none text-center q-mt-md">Bukti pembayaran sudah berhasil diunggah <br> Cari buah
         lainnya selagi menunggu verifikasi !</p>
       <q-btn label="Kembali ke Beranda" class="button jakarta-b" unelevated no-caps @click="navigateToRoute()"/>
     </div>
@@ -30,13 +30,7 @@ export default {
 </script>
 
 <style>
-.container {
-  width: 519px;
-  margin: 44px auto 0 auto;
-  text-align: center;
-}
-
-.logo {
+.payment-logo {
   width: 279px;
   height: 62px;
 }

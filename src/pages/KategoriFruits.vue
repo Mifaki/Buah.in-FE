@@ -1,57 +1,57 @@
 <template>
   <q-page>
     <div class="row items-start">
-      <q-list bordered class="sidebar">
+      <q-list bordered class="kategori-sidebar">
         <q-item>
-          <q-item-section class="jakarta-b paragraph q-mb-none">Kategori</q-item-section>
+          <q-item-section class="jakarta-b hitam30-16 q-mb-none">Kategori</q-item-section>
         </q-item>
 
         <q-item clickable v-ripple class="q-pb-none">
-          <q-item-section class="jakarta-sb caption q-mb-none q-ml-md">Best Deal</q-item-section>
+          <q-item-section class="jakarta-sb hitam20 q-mb-none q-ml-md">Best Deal</q-item-section>
         </q-item>
 
         <q-item clickable v-ripple class="q-py-none">
-          <q-item-section class="jakarta-sb caption q-mb-none q-ml-md ">Buah.in Selection</q-item-section>
+          <q-item-section class="jakarta-sb hitam20 q-mb-none q-ml-md ">Buah.in Selection</q-item-section>
         </q-item>
 
         <q-item clickable v-ripple class="q-py-none">
-          <q-item-section class="jakarta-sb caption q-mb-none q-ml-md">On Sale</q-item-section>
+          <q-item-section class="jakarta-sb hitam20 q-mb-none q-ml-md">On Sale</q-item-section>
         </q-item>
 
         <q-item clickable v-ripple class="q-py-none">
-          <q-item-section class="jakarta-sb caption q-mb-none q-ml-md">Semua Kategori</q-item-section>
+          <q-item-section class="jakarta-sb hitam20 q-mb-none q-ml-md">Semua Kategori</q-item-section>
         </q-item>
 
         <q-separator />
 
         <q-item>
-          <q-item-section class="jakarta-b paragraph q-mb-none">Lokasi</q-item-section>
+          <q-item-section class="jakarta-b hitam30-16 q-mb-none">Lokasi</q-item-section>
         </q-item>
 
         <q-item class="q-py-none">
-          <q-checkbox class="jakarta-sb caption q-mb-none" v-model="Malang" color="green" label="Malang">
+          <q-checkbox class="jakarta-sb hitam20 q-mb-none" v-model="Malang" color="green" label="Malang">
           </q-checkbox>
         </q-item>
 
         <q-item class="q-py-none">
-          <q-checkbox class="jakarta-sb caption q-mb-none" v-model="Batu" color="green" label="Batu">
+          <q-checkbox class="jakarta-sb hitam20 q-mb-none" v-model="Batu" color="green" label="Batu">
           </q-checkbox>
         </q-item>
 
         <q-item class="q-py-none">
-          <q-checkbox class="jakarta-sb caption q-mb-none" v-model="Banyuwangi" color="green" label="Banyuwangi">
+          <q-checkbox class="jakarta-sb hitam20 q-mb-none" v-model="Banyuwangi" color="green" label="Banyuwangi">
           </q-checkbox>
         </q-item>
 
         <q-item class="q-py-none">
-          <q-checkbox class="jakarta-sb caption q-mb-none" v-model="Probolinggo" color="green" label="Probolinggo">
+          <q-checkbox class="jakarta-sb hitam20 q-mb-none" v-model="Probolinggo" color="green" label="Probolinggo">
           </q-checkbox>
         </q-item>
 
         <q-separator />
 
         <q-item>
-          <q-item-section class="jakarta-b paragraph q-mb-none">Urutkan</q-item-section>
+          <q-item-section class="jakarta-b hitam30-16 q-mb-none">Urutkan</q-item-section>
         </q-item>
 
         <q-item>
@@ -69,7 +69,7 @@
         <q-separator />
         '
       </q-list>
-      <div class="right-container q-mt-xl">
+      <div class="kategori-container q-mt-xl">
         <div class="row q-ml-md">
           <div class="row cursor-pointer active-page jakarta-b q-mb-none q-px-md">
             <q-icon name="fa-solid fa-seedling" />
@@ -87,30 +87,30 @@
           <template v-slot:item="props">
             <div class="q-pa-md">
               <q-item to="/home/fruit-id" replace>
-                <q-card no-shadow class="card">
+                <q-card no-shadow class="fruits-card">
                   <q-icon :name="props.row.thumbnail" size="202px" />
-                  <div class="card-inside q-mx-md q-mt-sm">
-                    <p class="paragraph jakarta-sb q-mb-none q-mt-sm">{{ props.row.name }}</p>
+                  <div class="fruits-card-inside q-mx-md q-mt-sm">
+                    <p class="hitam30-16 jakarta-sb q-mb-none q-mt-sm">{{ props.row.name }}</p>
                     <div v-if="props.row.discount > 0 || props.row < 100">
-                      <p class="paragraph jakarta-b q-mb-none q-mt-sm">Rp {{ calculateDiscount(props.row.price,
+                      <p class="hitam30-16 jakarta-b q-mb-none q-mt-sm">Rp {{ calculateDiscount(props.row.price,
                         props.row.discount) }}</p>
                       <div class="row q-mt-sm items-center">
                         <div class="discount-bg">
                           <p class="discount-text jakarta-b q-mb-none q-pa-xs">{{ props.row.discount }}%</p>
                         </div>
-                        <p class="caption jakarta-md q-mb-none q-ml-md">Rp <strike>{{ formatNumber(props.row.price)
+                        <p class="hitam20 jakarta-md q-mb-none q-ml-md">Rp <strike>{{ formatNumber(props.row.price)
                         }}</strike>
                         </p>
                       </div>
                     </div>
-                    <p v-else class="paragraph jakarta-b q-mb-none q-mt-sm">Rp {{ formatNumber(props.row.price) }}</p>
-                    <p class="caption jakarta-md  q-mb-none q-mt-sm">{{ props.row.city }}</p>
+                    <p v-else class="hitam30-16 jakarta-b q-mb-none q-mt-sm">Rp {{ formatNumber(props.row.price) }}</p>
+                    <p class="hitam20 jakarta-md  q-mb-none q-mt-sm">{{ props.row.city }}</p>
                     <div v-if="props.row.sold" class="row items-center q-mt-sm">
                       <q-icon name="star" color="yellow" />
-                      <p class="caption jakarta-md q-mb-none q-ml-sm">{{ props.row.rating.toFixed(1) }}</p>
-                      <p class="caption jakarta-md q-mb-none q-ml-sm">|</p>
-                      <p class="caption jakarta-md q-mb-none q-ml-sm">Terjual</p>
-                      <p class="caption jakarta-md q-mb-none q-ml-sm">{{ props.row.sold }}</p>
+                      <p class="hitam20 jakarta-md q-mb-none q-ml-sm">{{ props.row.rating.toFixed(1) }}</p>
+                      <p class="hitam20 jakarta-md q-mb-none q-ml-sm">|</p>
+                      <p class="hitam20 jakarta-md q-mb-none q-ml-sm">Terjual</p>
+                      <p class="hitam20 jakarta-md q-mb-none q-ml-sm">{{ props.row.sold }}</p>
                     </div>
                   </div>
                 </q-card>
@@ -312,74 +312,6 @@ export default {
 </script>
 
 <style>
-.right-container {
-  width: 1280px;
-}
-
-.sidebar {
-  margin-top: 48px;
-  margin-left: 36px;
-  width: 201px;
-  height: 695px;
-  background-color: white;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
-  border-radius: 15px;
-}
-
-.paragraph {
-  font-size: 16px;
-  color: #323741;
-}
-
-.caption {
-  font-size: 14px;
-  color: #70737A;
-}
-
-.link{
-  text-decoration: none;
-}
-
-.toggle-text {
-  font-size: 16px;
-  color: #ADAFB3;
-}
-
-.list {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 141px;
-}
-
-.card {
-  max-width: 202px;
-  min-height: 398px;
-}
-
-.card-inside {
-  max-width: 170px;
-}
-
-.discount-bg {
-  width: min-content;
-  height: min-content;
-  background-color: #F8D3D2;
-  border-radius: 5px;
-}
-
-.discount-text {
-  font-size: 12px;
-  color: #E4504A;
-}
-
-.active-page {
-  font-size: 16px;
-  border-bottom: 2px solid #116530;
-  color: #116530;
-}
-
 .text-hitam20 {
   color: #70737A !important;
 }

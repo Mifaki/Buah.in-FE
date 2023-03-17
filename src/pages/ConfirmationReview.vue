@@ -1,6 +1,6 @@
 <template>
   <q-page>
-    <div class="container">
+    <div class="confirmationReview-container">
       <div class="row">
         <router-link to="confirmation-waiting" class="link">
           <div class="row cursor-pointer toggle-text jakarta-b q-mb-none q-px-md">
@@ -11,23 +11,23 @@
           <p class="q-ml-sm q-mb-none">Ulasan Saya</p>
         </div>
       </div>
-      <div class="item q-mt-lg">
+      <div class="confirmationReviews-item q-mt-lg">
         <div class="row">
           <q-icon :name="this.thumbnail" size="116px" />
           <div class="q-ml-lg">
-            <p class="name-text jakarta-b q-mb-none">{{ this.name }}</p>
-            <p class="question-text jakarta-sb q-mb-none q-mt-md">Bagaimana kualitas buah secara kesuluruhan</p>
+            <p class="hitam30-24 jakarta-b q-mb-none">{{ this.name }}</p>
+            <p class="hitam10-16 jakarta-sb q-mb-none q-mt-md">Bagaimana kualitas buah secara kesuluruhan</p>
             <div class="row justify-between items-center q-mt-md">
               <q-rating v-model="ratingModel" size="26px" color="yellow" icon="star_border" icon-selected="star" />
-              <p class="rating-status jakarta-b q-mb-none">Sangat Baik</p>
+              <p class="hitam20-16 jakarta-b q-mb-none">Sangat Baik</p>
             </div>
           </div>
         </div>
-        <p class="review-title jakarta-sb q-mb-none q-mt-xl">Berikan ulasan untuk buah ini</p>
+        <p class="hitam30-16 jakarta-sb q-mb-none q-mt-xl">Berikan ulasan untuk buah ini</p>
         <q-form @submit.prevent="submitForm">
-          <q-input outlined round v-model="reviews" type="text-area" class="reviews q-mt-sm" color="primary"
+          <q-input outlined round v-model="reviews" type="text-area" class="confirmation-reviews q-mt-sm" color="primary"
             placeholder="Tulis deskripsi Anda mengenai produk ini ..." autogrow />
-          <q-btn rounded color="primary" label="Kirim Ulasaan" no-caps class="confirmation-button jakarta-sb"
+          <q-btn rounded color="primary" label="Kirim Ulasaan" no-caps class="confirmation-button jakarta-sb q-mt-lg"
             type="submit" unelevated />
         </q-form>
       </div>
@@ -84,54 +84,6 @@ export default {
 </script>
 
 <style>
-.container {
-  margin-left: 139px;
-  margin-top: 64px;
-}
-
-.item {
-  width: 758px;
-}
-
-.active-page {
-  border-bottom: 2px solid #116530;
-  color: #116530;
-}
-
-.link {
-  text-decoration: none;
-}
-
-.toggle-text {
-  font-size: 16px;
-  color: #ADAFB3;
-}
-
-.name-text {
-  font-size: 24px;
-  color: #323741;
-}
-
-.review-title {
-  font-size: 16px;
-  color: #323741;
-}
-
-.question-text {
-  font-size: 16px;
-  color: #ADAFB3;
-}
-
-.rating-status {
-  font-size: 16px;
-  color: #70737A;
-}
-
-.reviews {
-  height: 120px;
-  width: 100%;
-}
-
 .confirmation-button {
   height: 44px;
   width: 130px;

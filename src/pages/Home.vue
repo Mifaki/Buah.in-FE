@@ -1,31 +1,31 @@
 <template>
   <q-page>
-    <q-icon name="img:icons/Banner.svg" class="banner" />
-    <div class="body">
-      <p class="heading jakarta-sb  q-mb-none q-mt-lg">Spesial Untuk Kamu</p>
+    <q-icon name="img:icons/Banner.svg" class="home-banner" />
+    <div class="home-container">
+      <p class="hitam30-24 jakarta-sb  q-mb-none q-mt-lg">Spesial Untuk Kamu</p>
       <div class="list justify-center q-mt-xl">
         <div class="text-centerr">
           <q-btn unelevated round color="primary" icon="card_giftcard" size="30px" to="/home/kategori-fruits" replace />
-          <p class="paragraph jakarta-sb q-mb-none q-mt-sm  ">Beli Lagi</p>
+          <p class="hitam30-16 jakarta-sb q-mb-none q-mt-sm  ">Beli Lagi</p>
         </div>
         <div class="text-center">
           <q-btn unelevated round color="primary" icon="card_giftcard" size="30px" to="/home/kategori-fruits" replace />
-          <p class="paragraph jakarta-sb q-mb-none q-mt-sm">Best Deal</p>
+          <p class="hitam30-16 jakarta-sb q-mb-none q-mt-sm">Best Deal</p>
         </div>
         <div class="text-center">
           <q-btn unelevated round color="primary" icon="card_giftcard" size="30px" to="/home/kategori-fruits" replace />
-          <p class="paragraph jakarta-sb q-mb-none q-mt-sm">Buah.in Selection</p>
+          <p class="hitam30-16 jakarta-sb q-mb-none q-mt-sm">Buah.in Selection</p>
         </div>
         <div class="text-center">
           <q-btn unelevated round color="primary" icon="card_giftcard" size="30px" to="/home/kategori-fruits" replace />
-          <p class="paragraph jakarta-sb q-mb-none q-mt-sm">On Sale</p>
+          <p class="hitam30-16 jakarta-sb q-mb-none q-mt-sm">On Sale</p>
         </div>
         <div class="text-center">
           <q-btn unelevated round color="primary" icon="card_giftcard" size="30px" to="/home/kategori-fruits" replace />
-          <p class="paragraph jakarta-sb q-mb-none q-mt-sm">Semua Kategori</p>
+          <p class="hitam30-16 jakarta-sb q-mb-none q-mt-sm">Semua Kategori</p>
         </div>
       </div>
-      <p class="heading jakarta-sb  q-mb-none q-mt-xl q-pt-lg">Rekomendasi Buah Buat Kamu</p>
+      <p class="hitam30-24 jakarta-sb  q-mb-none q-mt-xl q-pt-lg">Rekomendasi Buah Buat Kamu</p>
       <q-table :rows="rows" :columns="columns" row-key="name" grid hide-header virtual-scroll
         v-model:pagination="pagination" :rows-per-page-options="[0]" hide-bottom>
       <template v-slot:item="props">
@@ -33,27 +33,27 @@
           <q-item to="/home/fruit-id" replace>
             <q-card no-shadow class="fruits-card">
               <q-icon :name="props.row.thumbnail" size="202px" />
-              <div class="card-inside q-mx-md q-mt-sm">
-                <p class="paragraph jakarta-sb q-mb-none q-mt-sm">{{ props.row.name }}</p>
+              <div class="fruits-card-inside q-mx-md q-mt-sm">
+                <p class="hitam30-16 jakarta-sb q-mb-none q-mt-sm">{{ props.row.name }}</p>
                 <div v-if="props.row.discount > 0 || props.row < 100">
-                  <p class="paragraph jakarta-b q-mb-none q-mt-sm">Rp {{ calculateDiscount(props.row.price,
+                  <p class="hitam30-16 jakarta-b q-mb-none q-mt-sm">Rp {{ calculateDiscount(props.row.price,
                     props.row.discount) }}</p>
                   <div class="row q-mt-sm items-center">
                     <div class="discount-bg">
                       <p class="discount-text jakarta-b q-mb-none q-pa-xs">{{ props.row.discount }}%</p>
                     </div>
-                    <p class="caption jakarta-md q-mb-none q-ml-md">Rp <strike>{{ formatNumber(props.row.price) }}</strike>
+                    <p class="hitam20 jakarta-md q-mb-none q-ml-md">Rp <strike>{{ formatNumber(props.row.price) }}</strike>
                     </p>
                   </div>
                 </div>
-                <p v-else class="paragraph jakarta-b q-mb-none q-mt-sm">Rp {{ formatNumber(props.row.price) }}</p>
-                <p class="caption jakarta-md  q-mb-none q-mt-sm">{{ props.row.city }}</p>
+                <p v-else class="hitam30-16 jakarta-b q-mb-none q-mt-sm">Rp {{ formatNumber(props.row.price) }}</p>
+                <p class="hitam20 jakarta-md  q-mb-none q-mt-sm">{{ props.row.city }}</p>
                 <div v-if="props.row.sold" class="row items-center q-mt-sm">
                   <q-icon name="star" color="yellow" />
-                  <p class="caption jakarta-md q-mb-none q-ml-sm">{{ props.row.rating }}</p>
-                  <p class="caption jakarta-md q-mb-none q-ml-sm">|</p>
-                  <p class="caption jakarta-md q-mb-none q-ml-sm">Terjual</p>
-                  <p class="caption jakarta-md q-mb-none q-ml-sm">{{ props.row.sold }}</p>
+                  <p class="hitam20 jakarta-md q-mb-none q-ml-sm">{{ props.row.rating }}</p>
+                  <p class="hitam20 jakarta-md q-mb-none q-ml-sm">|</p>
+                  <p class="hitam20 jakarta-md q-mb-none q-ml-sm">Terjual</p>
+                  <p class="hitam20 jakarta-md q-mb-none q-ml-sm">{{ props.row.sold }}</p>
                 </div>
               </div>
             </q-card>
@@ -248,32 +248,6 @@ export default {
 </script>
 
 <style>
-.banner {
-  width: 1418px;
-  height: 394px;
-  display: flex;
-  margin: 0 auto;
-}
-
-.body {
-  margin: 0 134px;
-}
-
-.heading {
-  font-size: 24px;
-  color: #323741;
-}
-
-.paragraph {
-  font-size: 16px;
-  color: #323741;
-}
-
-.caption {
-  font-size: 14px;
-  color: #70737A;
-}
-
 .list {
   display: flex;
   flex-direction: row;
@@ -281,21 +255,5 @@ export default {
   padding: 0px;
   gap: 141px;
 
-}
-
-.card-inside {
-  max-width: 170px;
-}
-
-.discount-bg {
-  width: min-content;
-  height: min-content;
-  background-color: #F8D3D2;
-  border-radius: 5px;
-}
-
-.discount-text {
-  font-size: 12px;
-  color: #E4504A;
 }
 </style>

@@ -1,24 +1,24 @@
 <template>
   <q-page>
-    <div class="container row justify-center">
-      <div class="left-container">
-        <p class="page-title jakarta-b q-mb-none q-mb-lg">Checkout</p>
-        <p class="section-title jakarta-sb q-mb-none q-mb-md">Alamat Pengiriman</p>
+    <div class="checkout-container row justify-center">
+      <div class="checkoutLeftLeft-container">
+        <p class="hitam30-24 jakarta-b q-mb-none q-mb-lg">Checkout</p>
+        <p class="hitam30-24 jakarta-sb q-mb-none q-mb-md">Alamat Pengiriman</p>
         <div class="divider" />
         <div>
-          <p class="username jakarta-sb q-mb-none q-mt-md">{{ this.username }}</p>
-          <p class="noTelp jakarta-r q-mb-none q-my-sm">{{ this.noTelp }}</p>
-          <p class="address jakarta-r q-mb-none q-mb-md">{{ this.address[0] }}</p>
+          <p class="hitam30-16 jakarta-sb q-mb-none q-mt-md">{{ this.username }}</p>
+          <p class="hitam30 jakarta-r q-mb-none q-my-sm">{{ this.noTelp }}</p>
+          <p class="hitam20 jakarta-r q-mb-none q-mb-md">{{ this.address[0] }}</p>
         </div>
         <div class="divider" />
         <q-btn outline rounded color="hijau60" label="Pilih Alamat Lain" no-caps size="15px" class="q-mt-md q-mb-lg"
           @click="otherAddress = true" />
         <q-dialog v-model="otherAddress">
-          <q-card class="overlay">
+          <q-card class="checkout-overlay">
 
             <q-card-section>
               <div class="q-pa-md">
-                <p v-if="currentPage" class="overlay-title jakarta-b text-center">Pilih Alamat Pengiriman</p>
+                <p v-if="currentPage" class="hitam30-24 jakarta-b text-center">Pilih Alamat Pengiriman</p>
                 <P v-else class="overlay-title jakarta-b text-center">Lengkapi Detail Alamat</P>
                 <div class="row justify-evenly">
                   <p class="cursor-pointer" :class="{ 'active-page': currentPage }" @click="currentPage = true">Semua
@@ -33,21 +33,21 @@
                     <q-card-section>
                       <div class="row inactive-address items-center" :class="{ ' active-address': addressActiveOne }"
                         @click="toggleButton">
-                        <div class="details">
-                          <p class="address-label jakarta-b q-mb-none">{{ this.addressLabelShow[0] }}</p>
-                          <p class="username jakarta-b q-mb-none">{{ this.username }}</p>
-                          <p class="noTelp jakarta-r q-mb-none">{{ this.noTelp }}</p>
+                        <div class="checkout-details">
+                          <p class="hitam20 jakarta-b q-mb-none">{{ this.addressLabelShow[0] }}</p>
+                          <p class="hitam30-16 jakarta-b q-mb-none">{{ this.username }}</p>
+                          <p class="hitam30 jakarta-r q-mb-none">{{ this.noTelp }}</p>
                           <p class="adress details jakarta-r q-mb-none ellipsis">{{ this.address[0] }}</p>
                         </div>
                         <q-icon v-if="addressActiveOne" name="fa-solid fa-check" color="hijau60" size="24px" />
                       </div>
                       <div class="row inactive-address items-center q-mt-md"
                         :class="{ ' active-address': addressActiveTwo }" @click="toggleButton">
-                        <div class="details">
-                          <p class="address-label jakarta-b q-mb-none">{{ this.addressLabelShow[1] }}</p>
-                          <p class="username jakarta-b q-mb-none">{{ this.username }}</p>
-                          <p class="noTelp jakarta-r q-mb-none">{{ this.noTelp }}</p>
-                          <p class="adress details jakarta-r q-mb-none ellipsis">{{ this.address[1] }}</p>
+                        <div class="checkout-details">
+                          <p class="hitam20 jakarta-b q-mb-none">{{ this.addressLabelShow[1] }}</p>
+                          <p class="hitam30-16 jakarta-b q-mb-none">{{ this.username }}</p>
+                          <p class="hitam30 jakarta-r q-mb-none">{{ this.noTelp }}</p>
+                          <p class="hitam30 jakarta-r q-mb-none ellipsis">{{ this.address[1] }}</p>
                         </div>
                         <q-icon v-if="addressActiveTwo" name="fa-solid fa-check" color="hijau60" size="24px" />
                       </div>
@@ -93,29 +93,29 @@
           <q-table :rows="rows" :columns="columns" row-key="name" class="table" grid hide-header hide-bottom>
             <template v-slot:item="props">
               <div class="column">
-                <p class="store-name jakarta-sb q-mb-none q-mt-sm q-mb-sm">{{ props.row.store }}</p>
-                <p class="city-text jakarta-sb q-mb-none q-mb-md">{{ props.row.city }}</p>
+                <p class="hitam30-16 jakarta-sb q-mb-none q-mt-sm q-mb-sm">{{ props.row.store }}</p>
+                <p class="hitam20 jakarta-sb q-mb-none q-mb-md">{{ props.row.city }}</p>
               </div>
-              <div class="cart-item row q-mt-sm q-mb-md">
+              <div class="checkoutCart-item row q-mt-sm q-mb-md">
                 <q-icon :name="props.row.thumbnail" size="58px" />
                 <div class="column justify-between q-ml-md">
-                  <p class="name-text jakarta-sb q-mb-none">{{ props.row.name }}</p>
+                  <p class="hitam30-16 jakarta-sb q-mb-none">{{ props.row.name }}</p>
                   <div v-if="props.row.discount > 0 || props.row < 100" class="row items-center">
-                    <p class="discount-price-text jakarta-md q-mb-none">Rp <strike>{{
+                    <p class="hitam20 jakarta-md q-mb-none">Rp <strike>{{
                       formatNumber(props.row.price)
                     }}</strike>
                     </p>
-                    <p class="price-text jakarta-b q-mb-none q-mx-sm">Rp {{
+                    <p class="hitam30 jakarta-b q-mb-none q-mx-sm">Rp {{
                       formatNumber(calculateDiscount(props.row.price,
                         props.row.discount)) }}</p>
                   </div>
-                  <p v-else class="price-text jakarta-b q-mb-none">Rp {{ formatNumber(props.row.price) }}</p>
+                  <p v-else class="hitam30 jakarta-b q-mb-none">Rp {{ formatNumber(props.row.price) }}</p>
                 </div>
               </div>
             </template>
           </q-table>
           <div class="dropdown">
-            <p class="delivery-title jakarta-b q-mb-none q-mb-sm">Pilih Pengiriman</p>
+            <p class="hitam30-16 jakarta-b q-mb-none q-mb-sm">Pilih Pengiriman</p>
             <q-btn-dropdown color="hijau50" label="pengiriman" dropdown-icon="fa-solid fa-arrow-down" class="jakarta-b "
               no-caps>
               <q-list>
@@ -130,7 +130,7 @@
                 <q-item clickable v-close-popup @click="onItemClick">
                   <q-item-section>
                     <div class="row justify-between">
-                      <q-item-label class="jakarta-b dropdown-title">Reguler</q-item-label>
+                      <q-item-label class="jakarta-b ">Reguler</q-item-label>
                       <q-item-label class="jakarta-md dropdown-price">Rp 19.000</q-item-label>
                     </div>
                     <q-item-label class="jakarta-md dropdown-time">Estimasi tiba 11 - 12 Mar</q-item-label>
@@ -141,7 +141,7 @@
           </div>
         </div>
         <div class="q-mt-md">
-          <p class="payment-title jakarta-b q-mb-none">Pilih Pembayaran</p>
+          <p class="hitam30-16 jakarta-b q-mb-none">Pilih Pembayaran</p>
           <q-btn-dropdown label="pengiriman" dropdown_icon="arrow_right" class="jakarta-b q-mt-md payment-button" no-caps>
             <q-list>
               <q-item clickable v-close-popup @click="onItemClick">
@@ -203,22 +203,22 @@
           </q-btn-dropdown>
         </div>
       </div>
-      <q-card class="card q-py-md q-px-lg">
-        <p class="name-text jakarta-b q-mb-none">Ringkasan Belanja</p>
+      <q-card class="checkout-card q-py-md q-px-lg">
+        <p class="hitam30-16 jakarta-b q-mb-none">Ringkasan Belanja</p>
         <div class="q-mt-md">
           <div class="row justify-between">
-            <p class="summary-text jakarta-sb q-mb-none">Total Harga</p>
-            <p class="summary-text jakarta-sb q-mb-none">{{ 'Rp ' + formatNumber(roughTotalCost) }}</p>
+            <p class="hitam20-16 jakarta-sb q-mb-none">Total Harga</p>
+            <p class="hitam20-16 jakarta-sb q-mb-none">{{ 'Rp ' + formatNumber(roughTotalCost) }}</p>
           </div>
           <div class="row justify-between">
-            <p class="summary-text jakarta-sb q-mb-none">Total Ongkos Kirim</p>
-            <p class="summary-text jakarta-sb q-mb-none">Rp 19,000</p>
+            <p class="hitam20-16 jakarta-sb q-mb-none">Total Ongkos Kirim</p>
+            <p class="hitam20-16 jakarta-sb q-mb-none">Rp 19,000</p>
           </div>
         </div>
         <q-separator inset class="q-my-md" />
         <div class="row justify-between">
-          <p class="total-cost-text jakarta-b q-mb-none">Total Tagihan</p>
-          <p class="total-cost-text jakarta-b q-mb-none">{{ 'Rp ' + formatNumber(totalCost) }}</p>
+          <p class="hitam30-16 jakarta-b q-mb-none">Total Tagihan</p>
+          <p class="hitam30-16 jakarta-b q-mb-none">{{ 'Rp ' + formatNumber(totalCost) }}</p>
         </div>
         <q-btn class="buy-button jakarta-sb q-mt-lg" label="Beli" text-color="white" unelevated no-caps to="/payment" replace />
       </q-card>
@@ -356,15 +356,6 @@ export default {
 </script>
 
 <style>
-.container {
-  margin-top: 60px;
-}
-
-.left-container {
-  height: min-content;
-  width: 685px;
-}
-
 .divider {
   width: 685px;
   height: 2px;
@@ -378,64 +369,15 @@ export default {
   border-radius: 3px;
 }
 
-.page-title,
-.overlay-title {
-  font-size: 24px;
-  color: #323741;
-}
-
-.section-title,
-.store-name,
-.username,
-.delivery-title,
-.payment-title {
-  font-size: 16px;
-  color: #323741;
-}
-
-.noTelp,
-.dropdown-title,
-.address-details {
-  color: #323741;
-}
-
-.address,
-.city-text,
-.discount-price-text,
-.address-label {
-  color: #70737A;
-}
-
 .table {
   max-width: 342px;
   height: min-content;
-}
-
-.page-title {
-  font-size: 24px;
-  color: #323741;
 }
 
 .divider {
   width: 677px;
   height: 2px;
   background-color: #D9D9D9;
-}
-
-.cart-item {
-  width: 654px;
-  height: min-content;
-}
-
-.store-text,
-.name-text,
-.total-cost-text {
-  font-size: 16px;
-  color: #323741;
-}
-
-.price-text {
-  color: #323741;
 }
 
 .q-list {
@@ -467,19 +409,6 @@ export default {
   color: #70737A;
 }
 
-.card {
-  width: 332px;
-  height: min-content;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
-  border-radius: 15px;
-  margin-left: 156px;
-}
-
-.summary-text {
-  font-size: 16px;
-  color: #70737A;
-}
-
 .buy-button {
   width: 100%;
   height: 40px;
@@ -496,43 +425,12 @@ export default {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
 }
 
-.overlay {
-  width: 612px;
-  height: 711px;
-}
-
-form::-webkit-scrollbar {
-  display: none;
-}
-
 .add-address-button {
   background: #116530;
   width: 100%;
   height: 56px;
   border-radius: 15px;
   font-size: 16px;
-}
-
-.details {
-  max-width: 380px;
-}
-
-.active-page {
-  border-bottom: 2px solid #116530;
-  color: #116530;
-}
-
-.inactive-address {
-  padding: 24px;
-  border: 2px solid #58936E;
-  border-radius: 15px;
-  cursor: pointer;
-}
-
-.active-address {
-  background-color: #C9FDE0;
-  border: 2px solid #58936E;
-  border-radius: 15px;
 }
 
 .payment-label {

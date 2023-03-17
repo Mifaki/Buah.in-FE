@@ -18,7 +18,7 @@
 
 @font-face {
   font-family: "jakarta-b";
-  font-weight:700;
+  font-weight: 700;
   src: url("../../fonts/PlusJakartaSans-Bold.woff") format("woff");
 }
 
@@ -28,31 +28,467 @@
   src: url("../../fonts/PlusJakartaSans-ExtraBold.woff") format("woff");
 }
 
-  // declare a class which applies it
-  .jakarta-r {
-    font-family: 'jakarta-r';
-  }
+// declare a class which applies it
+.jakarta-r {
+  font-family: 'jakarta-r';
+}
 
-  .jakarta-md {
-    font-family: 'jakarta-md';
-  }
+.jakarta-md {
+  font-family: 'jakarta-md';
+}
 
-  .jakarta-sb {
-    font-family: 'jakarta-sb';
-  }
+.jakarta-sb {
+  font-family: 'jakarta-sb';
+}
 
-  .jakarta-b {
-    font-family: 'jakarta-b';
-  }
+.jakarta-b {
+  font-family: 'jakarta-b';
+}
 
-  .jakarta-xb {
-    font-family: 'jakarta-xb';
-  }
+.jakarta-xb {
+  font-family: 'jakarta-xb';
+}
 
-  //other global styles
+.hitam30 {
+  color: #323741;
+}
 
-  .fruits.card {
-    width: 202px;
-    height: 398px;
-  }
+.hitam30-16 {
+  font-size: 16px;
+  color: #323741;
+}
 
+.hitam30-24 {
+  font-size: 24px;
+  color: #323741;
+}
+
+.hitam20 {
+  color: #70737A;
+}
+
+.hitam20-16 {
+  font-size: 16px;
+  color: #70737A;
+}
+
+.hitam20-24 {
+  font-size: 24px;
+  color: #70737A;
+}
+
+.hitam10-10 {
+  font-size: 10px;
+  color: #ADAFB3;
+}
+
+.hitam10 {
+  color: #ADAFB3;
+}
+
+.hitam10 {
+  color: #ADAFB3;
+}
+
+.hitam10-16 {
+  color: #ADAFB3;
+}
+
+.hitam10-24 {
+  color: #ADAFB3;
+}
+
+.hijau60 {
+  color: #116530;
+}
+
+.hijau60-16 {
+  font-size: 16px;
+  color: #116530;
+}
+
+.hijau60-24 {
+  font-size: 24px;
+  color: #116530;
+}
+
+.hijau50 {
+  color: #58936E;
+}
+
+.hijau50-16 {
+  font-size: 16px;
+  color: #58936E;
+}
+
+.hijau50-24 {
+  font-size: 24px;
+  color: #58936E;
+}
+
+//General
+.logo-auth {
+  width: 322px;
+  height: 72px;
+}
+
+.fruits-card {
+  min-width: 202px;
+  min-height: 398px;
+}
+
+.fruits-card-inside {
+  max-width: 170px;
+}
+
+.logo-header {
+  height: 37px;
+  width: 167px;
+}
+
+.search-bar {
+  width: 817px;
+}
+
+.discount-bg {
+  width: min-content;
+  height: min-content;
+  background-color: #F8D3D2;
+  border-radius: 5px;
+}
+
+.discount-text {
+  font-size: 12px;
+  color: #E4504A;
+}
+
+.active-page {
+  font-size: 16px;
+  border-bottom: 2px solid #116530;
+  color: #116530;
+}
+
+.kategori-sidebar {
+  margin-top: 48px;
+  margin-left: 36px;
+  width: 201px;
+  height: 695px;
+  background-color: white;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+}
+
+.kategori-container {
+  width: 1280px;
+}
+
+.link{
+  text-decoration: none;
+}
+
+//login Page
+.login-form {
+  width: 584px;
+  height: 848px;
+  background-color: white;
+  margin-top: 32px;
+  padding: 0 44px;
+  border-radius: 25px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+}
+
+.login-title {
+  font-size: 36px;
+  color: #323741;
+}
+
+//Register Page
+.register-form {
+  width: 546px;
+  height: 795px;
+  background-color: white;
+  padding: 0 24px;
+  border-radius: 25px;
+}
+
+.ilustration-register {
+  width: 581px;
+  height: 624px;
+}
+
+//Landing Page
+.landing-image {
+  width: 100%;
+  height: 475px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 36px;
+  background-image: url('/icons/landingBanner.png');
+}
+
+.headline-card {
+  width: 700px;
+  height: min-content;
+  backdrop-filter: blur(12.5px);
+  background: rgba(232, 232, 232, 0.25);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.headline {
+  font-size: 42px;
+  color: #E7F0EA;
+}
+
+.highlight {
+  font-size: 42px;
+  color: #FFCC1D
+}
+
+.circle-1 {
+  background-color: #DBD24D ;
+}
+
+.circle-2{
+  background-color: #F7982D ;
+}
+
+.circle-3{
+  background-color: #FFDB61 ;
+}
+
+.visi-container {
+  margin-top: 130px;
+}
+
+.visi-container {
+  margin-top: 55px;
+}
+
+.paragraph {
+  max-width: 240px;
+  font-size: 24px;
+  color: #323741;
+}
+
+.visi-image {
+  width: 550px;
+  height: 321px;
+  margin-right: 70px;
+}
+
+.visi-text {
+  font-size: 30px;
+  color: #323741;
+  max-width: 683px;
+}
+
+.misi-image {
+  width: 550px;
+  height: 431px;
+  margin-left: 77px;
+}
+
+.misi-text {
+  font-size: 30px;
+  color: #323741;
+  max-width: 676px;;
+}
+
+.list {
+  margin: 0 210px;
+  margin-top: 100px;
+}
+
+//Home Page
+.home-banner {
+  width: 1418px;
+  height: 394px;
+  display: flex;
+  margin: 0 auto;
+}
+
+.home-container {
+  margin: 0 80px;
+}
+
+//Fruit ID Page
+.fruitID-container {
+  margin: 0 63px;
+  margin-top: 56px;
+}
+
+.thumbnails-container {
+  width: 395px;
+  height: min-content;
+}
+
+.details-container {
+  width: 495px;
+  height: min-content;
+}
+
+.actions-container {
+  width: 290px;
+  height: min-content;
+  color: #323741;
+  border-radius: 15px;
+  border: 2px solid #323741;
+  background-color: transparent;
+}
+
+.review-cardError {
+  width: 954px;
+  height: 184px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+}
+
+.cart-button {
+  width: 100%;
+  height: 40px;
+  background-color: #116530;
+  border-radius: 15px;
+}
+
+//Store ID Fruits Page
+.storeFruits-container {
+  margin: 0 154px;
+  margin-top: 56px;
+  margin-bottom: 52px;
+}
+
+.storeFruits-top {
+  width: 100%;
+  height: 116px;
+  padding: 32px 24px;
+  border: 1px solid #116530;
+  border-radius: 15px;
+}
+
+//Cart Page
+.cart-container {
+  margin-top: 50px;
+}
+
+.cart-table {
+  width: 654px;
+  height: min-content;
+  margin-right: 125px;
+}
+
+.cart-item {
+  width: 654px;
+  height: min-content;
+}
+
+.cart-card {
+  min-width: 332px;
+  height: 250px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+}
+
+//Payment Page
+.payment-container {
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.payment-details {
+  width: 511px;
+  height: min-content;
+  padding: 32px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+}
+
+//Payment Confirmation Page
+.paymentConfirmation-container {
+  width: 519px;
+  margin: 44px auto 0 auto;
+  text-align: center;
+}
+
+.payment-logo {
+  width: 279px;
+  height: 62px;
+}
+
+.payment-ilustration {
+  width: 519px;
+  height: 387px;
+}
+
+//Confirmation Review Page
+.confirmationReview-container {
+  margin-left: 139px;
+  margin-top: 64px;
+}
+
+.confirmationReviews-item {
+  width: 758px;
+}
+
+.confirmation-reviews {
+  height: 120px;
+  width: 100%;
+}
+
+//Confirmation Waiting Page
+.confirmationWaiting-container {
+  margin-left: 139px;
+  margin-top: 64px;
+}
+
+.confirmationWaiting-table {
+  width: 300px;
+}
+
+//Checkout Page
+.checkout-container {
+  margin-top: 60px;
+}
+
+.checkoutLeft-container {
+  height: min-content;
+  width: 685px;
+}
+
+.checkout-card {
+  width: 332px;
+  height: min-content;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  margin-left: 156px;
+}
+
+.checkout-overlay {
+  width: 612px;
+  height: 711px;
+}
+
+.checkout-details {
+  max-width: 380px;
+}
+
+.inactive-address {
+  padding: 24px;
+  border: 2px solid #58936E;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.active-address {
+  background-color: #C9FDE0;
+  border: 2px solid #58936E;
+  border-radius: 15px;
+}
+
+.checkoutCart-item {
+  width: 654px;
+  height: min-content;
+}

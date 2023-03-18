@@ -56,7 +56,7 @@ const routes = [
     path: '/cart',
     component: () => import('layouts/header.vue'),
     children: [
-      { path: '', name:'Cart', component: () => import('src/pages/CartPagevue') },
+      { path: '', name:'Cart', component: () => import('pages/CartPage.vue') },
     ]
   },
   {

@@ -102,7 +102,7 @@ const rows = [
     kondisi: 'Baru panen',
     berat: 3,
     desc: 'Lorem ipsum dolor sit amet, consectetur',
-    stock: 20,
+    stock: 20
   },
 ]
 

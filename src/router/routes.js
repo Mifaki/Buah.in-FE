@@ -67,7 +67,7 @@ const routes = [
     ]
   },
   {
-    path: '/store-id- fruits',
+    path: '/store-id-fruits',
     component: () => import('layouts/header.vue'),
     children: [
       { path: '', name:'StoreIDFruits', component: () => import('pages/StoreIDFruits.vue') },
